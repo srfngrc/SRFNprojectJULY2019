@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SRFNprojectJULY2019proj
 {
-    public partial class Form1 : Form
+    public partial class MainScreenForm : Form
     {
-        public Form1()
+        public MainScreenForm()
         {
             InitializeComponent();
         }

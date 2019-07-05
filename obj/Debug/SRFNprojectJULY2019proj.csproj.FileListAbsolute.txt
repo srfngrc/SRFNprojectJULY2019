@@ -1,0 +1,11 @@
+C:\VSRepositories\SRFNprojectJULY2019\bin\Debug\SRFNprojectJULY2019proj.exe.config
+C:\VSRepositories\SRFNprojectJULY2019\bin\Debug\SRFNprojectJULY2019proj.exe
+C:\VSRepositories\SRFNprojectJULY2019\bin\Debug\SRFNprojectJULY2019proj.pdb
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.csprojAssemblyReference.cache
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.loginScreen.resources
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.Properties.Resources.resources
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.csproj.GenerateResource.cache
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.csproj.CoreCompileInputs.cache
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.exe
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.pdb
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.MainScreenForm.resources
