@@ -16,5 +16,11 @@ namespace SRFNprojectJULY2019proj
         {
             InitializeComponent();
         }
+
+        private void MFCancelbtn_Click(object sender, EventArgs e)
+        {
+            //Application.Exit();
+            this.Close();
+        }
     }
 }

@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1ISIN = new System.Windows.Forms.Label();
+            this.label1operation = new System.Windows.Forms.Label();
             this.textBox1ISIN = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btnMFdataEnter = new System.Windows.Forms.Button();
+            this.MFCancelbtn = new System.Windows.Forms.Button();
+            this.MFokbtn = new System.Windows.Forms.Button();
+            this.label2operation = new System.Windows.Forms.Label();
+            this.label3operation = new System.Windows.Forms.Label();
+            this.label4operation = new System.Windows.Forms.Label();
+            this.label5operation = new System.Windows.Forms.Label();
+            this.label6operation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1ISIN
+            // label1operation
             // 
-            this.label1ISIN.AutoSize = true;
-            this.label1ISIN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1ISIN.Location = new System.Drawing.Point(31, 69);
-            this.label1ISIN.Name = "label1ISIN";
-            this.label1ISIN.Size = new System.Drawing.Size(77, 15);
-            this.label1ISIN.TabIndex = 0;
-            this.label1ISIN.Text = "Company ISIN";
+            this.label1operation.AutoSize = true;
+            this.label1operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1operation.Location = new System.Drawing.Point(31, 69);
+            this.label1operation.Name = "label1operation";
+            this.label1operation.Size = new System.Drawing.Size(55, 15);
+            this.label1operation.TabIndex = 0;
+            this.label1operation.Text = "Operation";
             // 
             // textBox1ISIN
             // 
@@ -58,56 +61,6 @@
             this.textBox1ISIN.Name = "textBox1ISIN";
             this.textBox1ISIN.Size = new System.Drawing.Size(151, 20);
             this.textBox1ISIN.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(31, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Company ISIN";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(31, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Company ISIN";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(31, 162);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Company ISIN";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(31, 192);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Company ISIN";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(31, 221);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 15);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Company ISIN";
             // 
             // textBox1
             // 
@@ -144,23 +97,104 @@
             this.textBox5.Size = new System.Drawing.Size(151, 20);
             this.textBox5.TabIndex = 11;
             // 
+            // btnMFdataEnter
+            // 
+            this.btnMFdataEnter.Location = new System.Drawing.Point(327, 62);
+            this.btnMFdataEnter.Name = "btnMFdataEnter";
+            this.btnMFdataEnter.Size = new System.Drawing.Size(131, 23);
+            this.btnMFdataEnter.TabIndex = 12;
+            this.btnMFdataEnter.Text = "Operation Data Enter";
+            this.btnMFdataEnter.UseVisualStyleBackColor = true;
+            // 
+            // MFCancelbtn
+            // 
+            this.MFCancelbtn.Location = new System.Drawing.Point(31, 381);
+            this.MFCancelbtn.Name = "MFCancelbtn";
+            this.MFCancelbtn.Size = new System.Drawing.Size(75, 23);
+            this.MFCancelbtn.TabIndex = 13;
+            this.MFCancelbtn.Text = "MFCancelbtn";
+            this.MFCancelbtn.UseVisualStyleBackColor = true;
+            this.MFCancelbtn.Click += new System.EventHandler(this.MFCancelbtn_Click);
+            // 
+            // MFokbtn
+            // 
+            this.MFokbtn.Location = new System.Drawing.Point(638, 381);
+            this.MFokbtn.Name = "MFokbtn";
+            this.MFokbtn.Size = new System.Drawing.Size(75, 23);
+            this.MFokbtn.TabIndex = 14;
+            this.MFokbtn.Text = "OK";
+            this.MFokbtn.UseVisualStyleBackColor = true;
+            // 
+            // label2operation
+            // 
+            this.label2operation.AutoSize = true;
+            this.label2operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2operation.Location = new System.Drawing.Point(31, 100);
+            this.label2operation.Name = "label2operation";
+            this.label2operation.Size = new System.Drawing.Size(55, 15);
+            this.label2operation.TabIndex = 15;
+            this.label2operation.Text = "Operation";
+            // 
+            // label3operation
+            // 
+            this.label3operation.AutoSize = true;
+            this.label3operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3operation.Location = new System.Drawing.Point(31, 133);
+            this.label3operation.Name = "label3operation";
+            this.label3operation.Size = new System.Drawing.Size(55, 15);
+            this.label3operation.TabIndex = 16;
+            this.label3operation.Text = "Operation";
+            // 
+            // label4operation
+            // 
+            this.label4operation.AutoSize = true;
+            this.label4operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4operation.Location = new System.Drawing.Point(31, 161);
+            this.label4operation.Name = "label4operation";
+            this.label4operation.Size = new System.Drawing.Size(55, 15);
+            this.label4operation.TabIndex = 17;
+            this.label4operation.Text = "Operation";
+            // 
+            // label5operation
+            // 
+            this.label5operation.AutoSize = true;
+            this.label5operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5operation.Location = new System.Drawing.Point(31, 194);
+            this.label5operation.Name = "label5operation";
+            this.label5operation.Size = new System.Drawing.Size(55, 15);
+            this.label5operation.TabIndex = 18;
+            this.label5operation.Text = "Operation";
+            // 
+            // label6operation
+            // 
+            this.label6operation.AutoSize = true;
+            this.label6operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6operation.Location = new System.Drawing.Point(31, 223);
+            this.label6operation.Name = "label6operation";
+            this.label6operation.Size = new System.Drawing.Size(55, 15);
+            this.label6operation.TabIndex = 20;
+            this.label6operation.Text = "Operation";
+            // 
             // MainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 428);
+            this.Controls.Add(this.label6operation);
+            this.Controls.Add(this.label5operation);
+            this.Controls.Add(this.label4operation);
+            this.Controls.Add(this.label3operation);
+            this.Controls.Add(this.label2operation);
+            this.Controls.Add(this.MFokbtn);
+            this.Controls.Add(this.MFCancelbtn);
+            this.Controls.Add(this.btnMFdataEnter);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1ISIN);
-            this.Controls.Add(this.label1ISIN);
+            this.Controls.Add(this.label1operation);
             this.Name = "MainScreenForm";
             this.Text = "MainScreen";
             this.ResumeLayout(false);
@@ -170,17 +204,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1ISIN;
+        private System.Windows.Forms.Label label1operation;
         private System.Windows.Forms.TextBox textBox1ISIN;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btnMFdataEnter;
+        private System.Windows.Forms.Button MFCancelbtn;
+        private System.Windows.Forms.Button MFokbtn;
+        private System.Windows.Forms.Label label2operation;
+        private System.Windows.Forms.Label label3operation;
+        private System.Windows.Forms.Label label4operation;
+        private System.Windows.Forms.Label label5operation;
+        private System.Windows.Forms.Label label6operation;
     }
 }
