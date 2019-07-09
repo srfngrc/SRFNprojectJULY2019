@@ -22,5 +22,11 @@ namespace SRFNprojectJULY2019proj
             //Application.Exit();
             this.Close();
         }
+
+        private void BtnMFdataEnter_Click(object sender, EventArgs e)
+        {
+            EachODE_Screen a = new EachODE_Screen();
+            a.Show();
+        }
     }
 }

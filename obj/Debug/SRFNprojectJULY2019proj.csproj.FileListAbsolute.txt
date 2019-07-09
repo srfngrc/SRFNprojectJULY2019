@@ -9,3 +9,4 @@ C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.csproj.C
 C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.exe
 C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.pdb
 C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.MainScreenForm.resources
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.EachODE_Screen.resources

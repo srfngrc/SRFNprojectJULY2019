@@ -6,14 +6,16 @@ using System.Windows.Forms;
 
 namespace SRFNprojectJULY2019proj
 {
-    static class Program
+    static public class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        //public int NumOperationsAdded = 0;
+        static public void Main()
         {
+            int NumOperationsAdded = 0;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginScreen());

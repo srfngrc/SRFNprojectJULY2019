@@ -105,6 +105,7 @@
             this.btnMFdataEnter.TabIndex = 12;
             this.btnMFdataEnter.Text = "Operation Data Enter";
             this.btnMFdataEnter.UseVisualStyleBackColor = true;
+            this.btnMFdataEnter.Click += new System.EventHandler(this.BtnMFdataEnter_Click);
             // 
             // MFCancelbtn
             // 
