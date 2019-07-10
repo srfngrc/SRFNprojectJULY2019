@@ -32,7 +32,7 @@ namespace SRFNprojectJULY2019proj
 
         private void Btn_EODE_add_Click(object sender, EventArgs e)
         {
-            SRFNprojectJULY2019proj.Program.NumOperationsAdded = 1;
+            //SRFNprojectJULY2019proj.Program.NumOperationsAdded = 1;
             this.Close();
         }
     }
