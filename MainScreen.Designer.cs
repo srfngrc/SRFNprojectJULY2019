@@ -43,6 +43,8 @@
             this.label4operation = new System.Windows.Forms.Label();
             this.label5operation = new System.Windows.Forms.Label();
             this.label6operation = new System.Windows.Forms.Label();
+            this.btnDBconnect = new System.Windows.Forms.Button();
+            this.btnReadDataFromDB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1operation
@@ -176,11 +178,35 @@
             this.label6operation.TabIndex = 20;
             this.label6operation.Text = "Operation";
             // 
+            // btnDBconnect
+            // 
+            this.btnDBconnect.Location = new System.Drawing.Point(519, 174);
+            this.btnDBconnect.Name = "btnDBconnect";
+            this.btnDBconnect.Size = new System.Drawing.Size(114, 64);
+            this.btnDBconnect.TabIndex = 21;
+            this.btnDBconnect.Text = "connect to DB NOW!";
+            this.btnDBconnect.UseVisualStyleBackColor = true;
+            this.btnDBconnect.Click += new System.EventHandler(this.BtnDBconnect_Click);
+            // 
+            // btnReadDataFromDB
+            // 
+            this.btnReadDataFromDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReadDataFromDB.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnReadDataFromDB.Location = new System.Drawing.Point(347, 298);
+            this.btnReadDataFromDB.Name = "btnReadDataFromDB";
+            this.btnReadDataFromDB.Size = new System.Drawing.Size(118, 37);
+            this.btnReadDataFromDB.TabIndex = 22;
+            this.btnReadDataFromDB.Text = "Read Data from DB!";
+            this.btnReadDataFromDB.UseVisualStyleBackColor = true;
+            this.btnReadDataFromDB.Click += new System.EventHandler(this.BtnReadDataFromDB_Click);
+            // 
             // MainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 428);
+            this.Controls.Add(this.btnReadDataFromDB);
+            this.Controls.Add(this.btnDBconnect);
             this.Controls.Add(this.label6operation);
             this.Controls.Add(this.label5operation);
             this.Controls.Add(this.label4operation);
@@ -220,5 +246,7 @@
         private System.Windows.Forms.Label label4operation;
         private System.Windows.Forms.Label label5operation;
         private System.Windows.Forms.Label label6operation;
+        private System.Windows.Forms.Button btnDBconnect;
+        private System.Windows.Forms.Button btnReadDataFromDB;
     }
 }

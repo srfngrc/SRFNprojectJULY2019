@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace SRFNprojectJULY2019proj
         public EachODE_Screen()
         {
             InitializeComponent();
+
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -34,6 +36,57 @@ namespace SRFNprojectJULY2019proj
         {
             //SRFNprojectJULY2019proj.Program.NumOperationsAdded = 1;
             this.Close();
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //DataGridView1.Datasource
+        }
+
+        private void BtnLoadDataFromDBcust_Click(object sender, EventArgs e)
+        {
+            string connetionString = null;
+            SqlConnection connecSRFN;
+            SqlCommand command;
+            connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
+                                "packet size=4096;" +
+                                "user id=serafin;" +
+                                "pwd=19771977;" +
+                                "data source=DatabaseSRFN.mssql.somee.com;" +
+                                "persist security info=False;" +
+                                "initial catalog=DatabaseSRFN";
+
+            connecSRFN = new SqlConnection(connetionString);
+
+            HasRows(connecSRFN);
+        }
+
+        static void HasRows(SqlConnection connection)
+        {
+            using (connection)
+            {
+                SqlCommand command = new SqlCommand(
+                  "SELECT customerId, customerName FROM Nutella.customers;",
+                  connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+        
+                        MessageBox.Show(String.Format("{0}\t{1}", reader[0].ToString(), reader[1].ToString()));
+    
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No rows found.");
+                }
+                reader.Close();
+            }
         }
     }
 }
