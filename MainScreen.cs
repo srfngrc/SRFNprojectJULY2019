@@ -53,11 +53,13 @@ namespace SRFNprojectJULY2019proj
             //tax_sql = "select * from Nutella.customers";
             //tax_sql = "insert into Nutella.customers (customerId,customerName, customerLastName, phone, addressLine1, addressLine2, city, State, postcode) values (3,'John','Doe', 416-648-9999', 'wodford avenue', 'apartment 206', 'toronto', 'ON', 'm5n2j6')";
             //tax_sql = "insert into Nutella.customers (customerId,customerName) values (3,'customer name 3')";
-            tax_sql = "insert into Nutella.customers(customerId, customerName) " +
+            tax_sql = "insert into Nutella.customers(customerId, customerName, addressLine1) " +
                     "values(" +
                     textBox1ISIN.Text +
                     ", '" +
-                    textBox1.Text + 
+                    textBox1.Text +
+                    "', '" +
+                    textBox2.Text +
                     "')";
       
 
