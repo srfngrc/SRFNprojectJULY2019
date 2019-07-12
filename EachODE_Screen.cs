@@ -71,6 +71,8 @@ namespace SRFNprojectJULY2019proj
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
+                var dataTable = new DataTable();
+                dataTable.Load(reader);
 
                 if (reader.HasRows)
                 {
@@ -78,7 +80,7 @@ namespace SRFNprojectJULY2019proj
                     {
         
                         MessageBox.Show(String.Format("{0}\t{1}", reader[0].ToString(), reader[1].ToString()));
-    
+                        
                     }
                 }
                 else
