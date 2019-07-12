@@ -47,7 +47,7 @@ namespace SRFNprojectJULY2019proj
         {
             string connetionString = null;
             SqlConnection connecSRFN;
-            SqlCommand command;
+            //SqlCommand command;
             connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
                                 "packet size=4096;" +
                                 "user id=serafin;" +
@@ -58,7 +58,28 @@ namespace SRFNprojectJULY2019proj
 
             connecSRFN = new SqlConnection(connetionString);
 
-            HasRows(connecSRFN);
+            SqlCommand command = new SqlCommand(
+                "SELECT customerId, customerName FROM Nutella.customers;", connecSRFN);
+            connecSRFN.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable dataTableSRFN = new DataTable();
+
+            //dataTableSRFN.Columns.Add("customerId", typeof(int));
+            //dataTableSRFN.Columns.Add("customerName", typeof(string));
+            //dataTableSRFN.Columns.Add("customerLastName", typeof(string));
+            //dataTableSRFN.Columns.Add("phone", typeof(string));
+            //dataTableSRFN.Columns.Add("addressLine1", typeof(string));
+            //dataTableSRFN.Columns.Add("addressLine2", typeof(string));
+            //dataTableSRFN.Columns.Add("city", typeof(string));
+            //dataTableSRFN.Columns.Add("State", typeof(string));
+
+            //dataTableSRFN.Rows.Add(1, "", "");
+
+            dataTableSRFN.Load(reader);
+            dataGridView1.DataSource = dataTableSRFN;
+
+
+            //HasRows(connecSRFN);
         }
 
         static void HasRows(SqlConnection connection)
@@ -71,8 +92,9 @@ namespace SRFNprojectJULY2019proj
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
-                var dataTable = new DataTable();
-                dataTable.Load(reader);
+                //var dataTable = new DataTable();
+                //dataTable.Load(reader);
+
 
                 if (reader.HasRows)
                 {
