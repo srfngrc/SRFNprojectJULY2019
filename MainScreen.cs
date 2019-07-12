@@ -30,15 +30,15 @@ namespace SRFNprojectJULY2019proj
 
         private void BtnMFdataEnter_Click(object sender, EventArgs e)
         {
-            EachODE_Screen a = new EachODE_Screen();
-            a.Show();
+            Insert_Each_ODE insertForm = new Insert_Each_ODE();
+            insertForm.Show();
         }
 
         private void BtnDBconnect_Click(object sender, EventArgs e)
         {
-            //string connetionString = null;
-            //SqlConnection connecSRFN;
-            //SqlCommand command;
+            string connetionString = null;
+            SqlConnection connecSRFN;
+            SqlCommand command;
             string tax_sql = null;
             MessageBox.Show("the values received from the windows form are: " + textBox1ISIN.Text + "......" + textBox1.Text);
         
@@ -49,9 +49,7 @@ namespace SRFNprojectJULY2019proj
                                 "data source=DatabaseSRFN.mssql.somee.com;" +
                                 "persist security info=False;" +
                                 "initial catalog=DatabaseSRFN";
-            //tax_sql = "Your SQL Statemnt Here";
             //tax_sql = "select * from Nutella.customers";
-            //tax_sql = "insert into Nutella.customers (customerId,customerName, customerLastName, phone, addressLine1, addressLine2, city, State, postcode) values (3,'John','Doe', 416-648-9999', 'wodford avenue', 'apartment 206', 'toronto', 'ON', 'm5n2j6')";
             //tax_sql = "insert into Nutella.customers (customerId,customerName) values (3,'customer name 3')";
             tax_sql = "insert into Nutella.customers(customerId, customerName, addressLine1) " +
                     "values(" +
@@ -86,7 +84,8 @@ namespace SRFNprojectJULY2019proj
 
         private void BtnReadDataFromDB_Click(object sender, EventArgs e)
         {
-            //HasRows(connecSRFN);
+            All_ODE_Screen a = new All_ODE_Screen();
+            a.Show();
         }
     }
 }

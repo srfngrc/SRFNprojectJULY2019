@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace SRFNprojectJULY2019proj
 {
-    public partial class EachODE_Screen : Form
+    public partial class All_ODE_Screen : Form
     {
         /// <summary>
         /// Summary of the description of the method defined ahead
         /// </summary>
-        public EachODE_Screen()
+        public All_ODE_Screen()
         {
             InitializeComponent();
 
@@ -59,7 +59,8 @@ namespace SRFNprojectJULY2019proj
             connecSRFN = new SqlConnection(connetionString);
 
             SqlCommand command = new SqlCommand(
-                "SELECT customerId, customerName FROM Nutella.customers;", connecSRFN);
+                //"SELECT customerId, customerName FROM Nutella.customers;", connecSRFN);
+                "SELECT * FROM Nutella.operations;", connecSRFN);
             connecSRFN.Open();
             SqlDataReader reader = command.ExecuteReader();
             DataTable dataTableSRFN = new DataTable();

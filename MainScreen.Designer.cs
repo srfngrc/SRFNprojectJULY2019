@@ -45,6 +45,11 @@
             this.label6operation = new System.Windows.Forms.Label();
             this.btnDBconnect = new System.Windows.Forms.Button();
             this.btnReadDataFromDB = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1operation
@@ -53,9 +58,9 @@
             this.label1operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1operation.Location = new System.Drawing.Point(31, 69);
             this.label1operation.Name = "label1operation";
-            this.label1operation.Size = new System.Drawing.Size(55, 15);
+            this.label1operation.Size = new System.Drawing.Size(71, 15);
             this.label1operation.TabIndex = 0;
-            this.label1operation.Text = "Operation";
+            this.label1operation.Text = "Operation #1";
             // 
             // textBox1ISIN
             // 
@@ -66,7 +71,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 100);
+            this.textBox1.Location = new System.Drawing.Point(137, 97);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(151, 20);
             this.textBox1.TabIndex = 7;
@@ -87,14 +92,14 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(137, 189);
+            this.textBox4.Location = new System.Drawing.Point(137, 194);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(151, 20);
             this.textBox4.TabIndex = 10;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(137, 218);
+            this.textBox5.Location = new System.Drawing.Point(137, 223);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(151, 20);
             this.textBox5.TabIndex = 11;
@@ -111,7 +116,7 @@
             // 
             // MFCancelbtn
             // 
-            this.MFCancelbtn.Location = new System.Drawing.Point(31, 381);
+            this.MFCancelbtn.Location = new System.Drawing.Point(31, 278);
             this.MFCancelbtn.Name = "MFCancelbtn";
             this.MFCancelbtn.Size = new System.Drawing.Size(75, 23);
             this.MFCancelbtn.TabIndex = 13;
@@ -121,7 +126,7 @@
             // 
             // MFokbtn
             // 
-            this.MFokbtn.Location = new System.Drawing.Point(638, 381);
+            this.MFokbtn.Location = new System.Drawing.Point(519, 278);
             this.MFokbtn.Name = "MFokbtn";
             this.MFokbtn.Size = new System.Drawing.Size(75, 23);
             this.MFokbtn.TabIndex = 14;
@@ -134,9 +139,9 @@
             this.label2operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2operation.Location = new System.Drawing.Point(31, 100);
             this.label2operation.Name = "label2operation";
-            this.label2operation.Size = new System.Drawing.Size(55, 15);
+            this.label2operation.Size = new System.Drawing.Size(71, 15);
             this.label2operation.TabIndex = 15;
-            this.label2operation.Text = "Operation";
+            this.label2operation.Text = "Operation #2";
             // 
             // label3operation
             // 
@@ -144,9 +149,9 @@
             this.label3operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3operation.Location = new System.Drawing.Point(31, 133);
             this.label3operation.Name = "label3operation";
-            this.label3operation.Size = new System.Drawing.Size(55, 15);
+            this.label3operation.Size = new System.Drawing.Size(71, 15);
             this.label3operation.TabIndex = 16;
-            this.label3operation.Text = "Operation";
+            this.label3operation.Text = "Operation #3";
             // 
             // label4operation
             // 
@@ -154,9 +159,9 @@
             this.label4operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4operation.Location = new System.Drawing.Point(31, 161);
             this.label4operation.Name = "label4operation";
-            this.label4operation.Size = new System.Drawing.Size(55, 15);
+            this.label4operation.Size = new System.Drawing.Size(71, 15);
             this.label4operation.TabIndex = 17;
-            this.label4operation.Text = "Operation";
+            this.label4operation.Text = "Operation #4";
             // 
             // label5operation
             // 
@@ -164,9 +169,9 @@
             this.label5operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5operation.Location = new System.Drawing.Point(31, 194);
             this.label5operation.Name = "label5operation";
-            this.label5operation.Size = new System.Drawing.Size(55, 15);
+            this.label5operation.Size = new System.Drawing.Size(71, 15);
             this.label5operation.TabIndex = 18;
-            this.label5operation.Text = "Operation";
+            this.label5operation.Text = "Operation #5";
             // 
             // label6operation
             // 
@@ -174,37 +179,88 @@
             this.label6operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6operation.Location = new System.Drawing.Point(31, 223);
             this.label6operation.Name = "label6operation";
-            this.label6operation.Size = new System.Drawing.Size(55, 15);
+            this.label6operation.Size = new System.Drawing.Size(71, 15);
             this.label6operation.TabIndex = 20;
-            this.label6operation.Text = "Operation";
+            this.label6operation.Text = "Operation #6";
             // 
             // btnDBconnect
             // 
-            this.btnDBconnect.Location = new System.Drawing.Point(519, 174);
+            this.btnDBconnect.Location = new System.Drawing.Point(519, 110);
             this.btnDBconnect.Name = "btnDBconnect";
             this.btnDBconnect.Size = new System.Drawing.Size(114, 64);
             this.btnDBconnect.TabIndex = 21;
             this.btnDBconnect.Text = "connect to DB NOW!";
             this.btnDBconnect.UseVisualStyleBackColor = true;
+            this.btnDBconnect.Visible = false;
             this.btnDBconnect.Click += new System.EventHandler(this.BtnDBconnect_Click);
             // 
             // btnReadDataFromDB
             // 
             this.btnReadDataFromDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReadDataFromDB.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnReadDataFromDB.Location = new System.Drawing.Point(347, 298);
+            this.btnReadDataFromDB.Location = new System.Drawing.Point(269, 264);
             this.btnReadDataFromDB.Name = "btnReadDataFromDB";
-            this.btnReadDataFromDB.Size = new System.Drawing.Size(118, 37);
+            this.btnReadDataFromDB.Size = new System.Drawing.Size(143, 37);
             this.btnReadDataFromDB.TabIndex = 22;
-            this.btnReadDataFromDB.Text = "Read Data from DB!";
+            this.btnReadDataFromDB.Text = "All operations entered";
             this.btnReadDataFromDB.UseVisualStyleBackColor = true;
             this.btnReadDataFromDB.Click += new System.EventHandler(this.BtnReadDataFromDB_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(327, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Operation Data Enter";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(327, 131);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Operation Data Enter";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(327, 160);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(131, 23);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Operation Data Enter";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(327, 192);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(131, 23);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "Operation Data Enter";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(327, 220);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(131, 23);
+            this.button5.TabIndex = 27;
+            this.button5.Text = "Operation Data Enter";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // MainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 428);
+            this.ClientSize = new System.Drawing.Size(649, 323);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReadDataFromDB);
             this.Controls.Add(this.btnDBconnect);
             this.Controls.Add(this.label6operation);
@@ -248,5 +304,10 @@
         private System.Windows.Forms.Label label6operation;
         private System.Windows.Forms.Button btnDBconnect;
         private System.Windows.Forms.Button btnReadDataFromDB;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
