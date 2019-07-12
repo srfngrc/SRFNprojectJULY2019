@@ -52,9 +52,9 @@
             this.lblISIN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblISIN.Location = new System.Drawing.Point(27, 44);
             this.lblISIN.Name = "lblISIN";
-            this.lblISIN.Size = new System.Drawing.Size(76, 15);
+            this.lblISIN.Size = new System.Drawing.Size(66, 15);
             this.lblISIN.TabIndex = 0;
-            this.lblISIN.Text = "ISIN Number: ";
+            this.lblISIN.Text = "IN Number: ";
             this.lblISIN.Click += new System.EventHandler(this.Label1_Click);
             // 
             // textBox1
