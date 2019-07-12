@@ -65,14 +65,6 @@ namespace SRFNprojectJULY2019proj
             DataTable dataTableSRFN = new DataTable();
 
             //dataTableSRFN.Columns.Add("customerId", typeof(int));
-            //dataTableSRFN.Columns.Add("customerName", typeof(string));
-            //dataTableSRFN.Columns.Add("customerLastName", typeof(string));
-            //dataTableSRFN.Columns.Add("phone", typeof(string));
-            //dataTableSRFN.Columns.Add("addressLine1", typeof(string));
-            //dataTableSRFN.Columns.Add("addressLine2", typeof(string));
-            //dataTableSRFN.Columns.Add("city", typeof(string));
-            //dataTableSRFN.Columns.Add("State", typeof(string));
-
             //dataTableSRFN.Rows.Add(1, "", "");
 
             dataTableSRFN.Load(reader);
@@ -92,17 +84,12 @@ namespace SRFNprojectJULY2019proj
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
-                //var dataTable = new DataTable();
-                //dataTable.Load(reader);
-
 
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-        
-                        MessageBox.Show(String.Format("{0}\t{1}", reader[0].ToString(), reader[1].ToString()));
-                        
+                      MessageBox.Show(String.Format("{0}\t{1}", reader[0].ToString(), reader[1].ToString()));
                     }
                 }
                 else
@@ -111,6 +98,22 @@ namespace SRFNprojectJULY2019proj
                 }
                 reader.Close();
             }
+        }
+
+        private void BtnTRY_Click(object sender, EventArgs e)
+        {
+            string connetionString = null;
+            SqlConnection connecSRFN;
+            connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
+                                "packet size=4096;" +
+                                "user id=serafin;" +
+                                "pwd=19771977;" +
+                                "data source=DatabaseSRFN.mssql.somee.com;" +
+                                "persist security info=False;" +
+                                "initial catalog=DatabaseSRFN";
+
+            connecSRFN = new SqlConnection(connetionString);
+            HasRows(connecSRFN);
         }
     }
 }

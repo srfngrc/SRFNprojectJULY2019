@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnTRY = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,11 +174,22 @@
             this.textBox3.Size = new System.Drawing.Size(208, 20);
             this.textBox3.TabIndex = 13;
             // 
+            // btnTRY
+            // 
+            this.btnTRY.Location = new System.Drawing.Point(369, 287);
+            this.btnTRY.Name = "btnTRY";
+            this.btnTRY.Size = new System.Drawing.Size(75, 23);
+            this.btnTRY.TabIndex = 14;
+            this.btnTRY.Text = "try";
+            this.btnTRY.UseVisualStyleBackColor = true;
+            this.btnTRY.Click += new System.EventHandler(this.BtnTRY_Click);
+            // 
             // EachODE_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 484);
+            this.Controls.Add(this.btnTRY);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -216,5 +228,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnTRY;
     }
 }

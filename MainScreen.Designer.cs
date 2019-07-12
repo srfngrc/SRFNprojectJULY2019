@@ -77,7 +77,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(151, 20);
             this.textBox2.TabIndex = 8;
-            //this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -116,7 +115,7 @@
             this.MFCancelbtn.Name = "MFCancelbtn";
             this.MFCancelbtn.Size = new System.Drawing.Size(75, 23);
             this.MFCancelbtn.TabIndex = 13;
-            this.MFCancelbtn.Text = "MFCancelbtn";
+            this.MFCancelbtn.Text = "Cancel";
             this.MFCancelbtn.UseVisualStyleBackColor = true;
             this.MFCancelbtn.Click += new System.EventHandler(this.MFCancelbtn_Click);
             // 
