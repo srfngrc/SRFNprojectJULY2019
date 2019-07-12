@@ -60,7 +60,7 @@
             // btn_EODE_add
             // 
             this.btn_EODE_add.AutoSize = true;
-            this.btn_EODE_add.Location = new System.Drawing.Point(255, 381);
+            this.btn_EODE_add.Location = new System.Drawing.Point(308, 421);
             this.btn_EODE_add.Name = "btn_EODE_add";
             this.btn_EODE_add.Size = new System.Drawing.Size(85, 23);
             this.btn_EODE_add.TabIndex = 2;
@@ -88,7 +88,7 @@
             // btn_EODE_Cancel
             // 
             this.btn_EODE_Cancel.AutoSize = true;
-            this.btn_EODE_Cancel.Location = new System.Drawing.Point(38, 381);
+            this.btn_EODE_Cancel.Location = new System.Drawing.Point(27, 421);
             this.btn_EODE_Cancel.Name = "btn_EODE_Cancel";
             this.btn_EODE_Cancel.Size = new System.Drawing.Size(104, 23);
             this.btn_EODE_Cancel.TabIndex = 5;
@@ -98,16 +98,17 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(27, 142);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(336, 180);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // btnLoadDataFromDBcust
             // 
-            this.btnLoadDataFromDBcust.Location = new System.Drawing.Point(48, 313);
+            this.btnLoadDataFromDBcust.Location = new System.Drawing.Point(93, 337);
             this.btnLoadDataFromDBcust.Name = "btnLoadDataFromDBcust";
             this.btnLoadDataFromDBcust.Size = new System.Drawing.Size(219, 23);
             this.btnLoadDataFromDBcust.TabIndex = 7;
@@ -119,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 430);
+            this.ClientSize = new System.Drawing.Size(456, 484);
             this.Controls.Add(this.btnLoadDataFromDBcust);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_EODE_Cancel);
