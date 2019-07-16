@@ -29,7 +29,8 @@ namespace SRFNprojectJULY2019proj
             SqlConnection connecSRFN3;
             SqlCommand command3;
             string tax_sql = null;
-            MessageBox.Show("the values received from the windows form are: " + textISINnumber.Text + "......" + textAmount.Text + "......" + textDescripODE.Text);
+            //MessageBox.Show("the values received from the windows form are: " + textISINnumber.Text + "......" + textAmount.Text + "......" + textDescripODE.Text);
+            MessageBox.Show("the values received from the windows form are: " + textISINnumber.Text + "......" + textAmount.Text + "......" + textDescripODE.Text + ";;;;;;;;" + dateTimePicker1.Value.ToString("yyyy-MM-dd"));
 
             connetionString3 = "workstation id=DatabaseSRFN.mssql.somee.com;" +
                                 "packet size=4096;" +
@@ -40,9 +41,13 @@ namespace SRFNprojectJULY2019proj
                                 "initial catalog=DatabaseSRFN";
             //tax_sql = "select * from Nutella.customers";
             //tax_sql = "insert into Nutella.customers (customerId,customerName) values (3,'customer name 3')";
-            tax_sql = "insert into Nutella.operations(isin, amount, description) " +
+            tax_sql = "insert into Nutella.operations(isin, purchaseDate, sellDate, amount, description) " +
                     "values('" +
                     textISINnumber.Text +
+                    "', '" +
+                    dateTimePicker1.Value.ToString("yyyy-MM-dd") +
+                    "', '" +
+                    dateTimePicker2.Value.ToString("yyyy-MM-dd") +
                     "', '" +
                     textAmount.Text +
                     "', '" +
