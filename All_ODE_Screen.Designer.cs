@@ -39,7 +39,7 @@
             // btn_EODE_add
             // 
             this.btn_EODE_add.AutoSize = true;
-            this.btn_EODE_add.Location = new System.Drawing.Point(308, 421);
+            this.btn_EODE_add.Location = new System.Drawing.Point(569, 434);
             this.btn_EODE_add.Name = "btn_EODE_add";
             this.btn_EODE_add.Size = new System.Drawing.Size(85, 23);
             this.btn_EODE_add.TabIndex = 2;
@@ -64,13 +64,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(381, 322);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 362);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // btnLoadDataFromDBcust
             // 
-            this.btnLoadDataFromDBcust.Location = new System.Drawing.Point(93, 373);
+            this.btnLoadDataFromDBcust.Location = new System.Drawing.Point(231, 380);
             this.btnLoadDataFromDBcust.Name = "btnLoadDataFromDBcust";
             this.btnLoadDataFromDBcust.Size = new System.Drawing.Size(219, 23);
             this.btnLoadDataFromDBcust.TabIndex = 7;
@@ -80,7 +80,7 @@
             // 
             // btnTRY
             // 
-            this.btnTRY.Location = new System.Drawing.Point(318, 373);
+            this.btnTRY.Location = new System.Drawing.Point(544, 380);
             this.btnTRY.Name = "btnTRY";
             this.btnTRY.Size = new System.Drawing.Size(75, 23);
             this.btnTRY.TabIndex = 14;
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 462);
+            this.ClientSize = new System.Drawing.Size(665, 459);
             this.Controls.Add(this.btnTRY);
             this.Controls.Add(this.btnLoadDataFromDBcust);
             this.Controls.Add(this.dataGridView1);
