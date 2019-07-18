@@ -43,7 +43,7 @@ namespace SRFNprojectJULY2019proj
             //DataGridView1.Datasource
         }
 
-        private void BtnLoadDataFromDBcust_Click(object sender, EventArgs e)
+        public void BtnLoadDataFromDBcust_Click(object sender, EventArgs e)
         {
             string connetionString = null;
             SqlConnection connecSRFN;

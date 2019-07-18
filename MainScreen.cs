@@ -40,7 +40,7 @@ namespace SRFNprojectJULY2019proj
             SqlConnection connecSRFN;
             SqlCommand command;
             string tax_sql = null;
-            MessageBox.Show("the values received from the windows form are: " + textBox1ISIN.Text + "......" + textBox1.Text);
+            //MessageBox.Show("the values received from the windows form are: " + textBox1ISIN.Text + "......" + textBox1.Text);
         
             connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
                                 "packet size=4096;" +
@@ -50,15 +50,16 @@ namespace SRFNprojectJULY2019proj
                                 "persist security info=False;" +
                                 "initial catalog=DatabaseSRFN";
             //tax_sql = "select * from Nutella.customers";
-            //tax_sql = "insert into Nutella.customers (customerId,customerName) values (3,'customer name 3')";
-            tax_sql = "insert into Nutella.customers(customerId, customerName, addressLine1) " +
-                    "values(" +
-                    textBox1ISIN.Text +
-                    ", '" +
-                    textBox1.Text +
-                    "', '" +
-                    textBox2.Text +
-                    "')";
+            //REFERENCIA: tax_sql = "insert into Nutella.customers (customerId,customerName) values (3,'customer name 3')";
+            
+            //tax_sql = "insert into Nutella.customers(customerId, customerName, addressLine1) " +
+            //"values(" +
+            //        textBox1ISIN.Text +
+            //        ", '" +
+            //        textBox1.Text +
+            //        "', '" +
+            //        textBox2.Text +
+            //        "')";
       
 
             connecSRFN = new SqlConnection(connetionString);
@@ -87,5 +88,36 @@ namespace SRFNprojectJULY2019proj
             All_ODE_Screen a = new All_ODE_Screen();
             a.Show();
         }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            Insert_Each_ODE insertForm = new Insert_Each_ODE();
+            insertForm.Show();
+        }
+
+        private void MFokbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            //Application.Exit();
+            this.Close();
+        }
+
+        private void PictureBox3_Click(object sender, EventArgs e)
+        {
+            All_ODE_Screen a = new All_ODE_Screen();
+            a.Show();
+        }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+            Edit_Operations b = new Edit_Operations();
+            b.Show();
+            this.Hide();
+        }
+         
     }
 }

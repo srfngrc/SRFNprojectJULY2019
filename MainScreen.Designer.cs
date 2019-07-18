@@ -29,163 +29,80 @@
         private void InitializeComponent()
         {
             this.label1operation = new System.Windows.Forms.Label();
-            this.textBox1ISIN = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.btnMFdataEnter = new System.Windows.Forms.Button();
-            this.MFCancelbtn = new System.Windows.Forms.Button();
-            this.MFokbtn = new System.Windows.Forms.Button();
             this.label2operation = new System.Windows.Forms.Label();
             this.label3operation = new System.Windows.Forms.Label();
             this.label4operation = new System.Windows.Forms.Label();
-            this.label5operation = new System.Windows.Forms.Label();
-            this.label6operation = new System.Windows.Forms.Label();
             this.btnDBconnect = new System.Windows.Forms.Button();
             this.btnReadDataFromDB = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PBAcceptMS = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBAcceptMS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1operation
             // 
             this.label1operation.AutoSize = true;
             this.label1operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1operation.Location = new System.Drawing.Point(31, 69);
+            this.label1operation.Location = new System.Drawing.Point(40, 223);
             this.label1operation.Name = "label1operation";
-            this.label1operation.Size = new System.Drawing.Size(71, 15);
+            this.label1operation.Size = new System.Drawing.Size(109, 15);
             this.label1operation.TabIndex = 0;
-            this.label1operation.Text = "Operation #1";
-            // 
-            // textBox1ISIN
-            // 
-            this.textBox1ISIN.Location = new System.Drawing.Point(137, 64);
-            this.textBox1ISIN.Name = "textBox1ISIN";
-            this.textBox1ISIN.Size = new System.Drawing.Size(151, 20);
-            this.textBox1ISIN.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(137, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(137, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 20);
-            this.textBox2.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(137, 161);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 20);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(137, 194);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(151, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(137, 223);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(151, 20);
-            this.textBox5.TabIndex = 11;
+            this.label1operation.Text = "Insert New Operation";
             // 
             // btnMFdataEnter
             // 
-            this.btnMFdataEnter.Location = new System.Drawing.Point(327, 62);
+            this.btnMFdataEnter.Location = new System.Drawing.Point(401, 292);
             this.btnMFdataEnter.Name = "btnMFdataEnter";
             this.btnMFdataEnter.Size = new System.Drawing.Size(131, 23);
             this.btnMFdataEnter.TabIndex = 12;
             this.btnMFdataEnter.Text = "Operation Data Enter";
             this.btnMFdataEnter.UseVisualStyleBackColor = true;
+            this.btnMFdataEnter.Visible = false;
             this.btnMFdataEnter.Click += new System.EventHandler(this.BtnMFdataEnter_Click);
-            // 
-            // MFCancelbtn
-            // 
-            this.MFCancelbtn.Location = new System.Drawing.Point(31, 278);
-            this.MFCancelbtn.Name = "MFCancelbtn";
-            this.MFCancelbtn.Size = new System.Drawing.Size(75, 23);
-            this.MFCancelbtn.TabIndex = 13;
-            this.MFCancelbtn.Text = "Cancel";
-            this.MFCancelbtn.UseVisualStyleBackColor = true;
-            this.MFCancelbtn.Click += new System.EventHandler(this.MFCancelbtn_Click);
-            // 
-            // MFokbtn
-            // 
-            this.MFokbtn.Location = new System.Drawing.Point(519, 278);
-            this.MFokbtn.Name = "MFokbtn";
-            this.MFokbtn.Size = new System.Drawing.Size(75, 23);
-            this.MFokbtn.TabIndex = 14;
-            this.MFokbtn.Text = "OK";
-            this.MFokbtn.UseVisualStyleBackColor = true;
             // 
             // label2operation
             // 
             this.label2operation.AutoSize = true;
             this.label2operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2operation.Location = new System.Drawing.Point(31, 100);
+            this.label2operation.Location = new System.Drawing.Point(200, 223);
             this.label2operation.Name = "label2operation";
-            this.label2operation.Size = new System.Drawing.Size(71, 15);
+            this.label2operation.Size = new System.Drawing.Size(133, 15);
             this.label2operation.TabIndex = 15;
-            this.label2operation.Text = "Operation #2";
+            this.label2operation.Text = "List All Entered Operations";
             // 
             // label3operation
             // 
             this.label3operation.AutoSize = true;
             this.label3operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3operation.Location = new System.Drawing.Point(31, 133);
+            this.label3operation.Location = new System.Drawing.Point(379, 223);
             this.label3operation.Name = "label3operation";
-            this.label3operation.Size = new System.Drawing.Size(71, 15);
+            this.label3operation.Size = new System.Drawing.Size(118, 15);
             this.label3operation.TabIndex = 16;
-            this.label3operation.Text = "Operation #3";
+            this.label3operation.Text = "Modify Past Operations";
             // 
             // label4operation
             // 
             this.label4operation.AutoSize = true;
             this.label4operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4operation.Location = new System.Drawing.Point(31, 161);
+            this.label4operation.Location = new System.Drawing.Point(559, 223);
             this.label4operation.Name = "label4operation";
-            this.label4operation.Size = new System.Drawing.Size(71, 15);
+            this.label4operation.Size = new System.Drawing.Size(100, 15);
             this.label4operation.TabIndex = 17;
-            this.label4operation.Text = "Operation #4";
-            // 
-            // label5operation
-            // 
-            this.label5operation.AutoSize = true;
-            this.label5operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5operation.Location = new System.Drawing.Point(31, 194);
-            this.label5operation.Name = "label5operation";
-            this.label5operation.Size = new System.Drawing.Size(71, 15);
-            this.label5operation.TabIndex = 18;
-            this.label5operation.Text = "Operation #5";
-            // 
-            // label6operation
-            // 
-            this.label6operation.AutoSize = true;
-            this.label6operation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6operation.Location = new System.Drawing.Point(31, 223);
-            this.label6operation.Name = "label6operation";
-            this.label6operation.Size = new System.Drawing.Size(71, 15);
-            this.label6operation.TabIndex = 20;
-            this.label6operation.Text = "Operation #6";
+            this.label4operation.Text = "Manage App Users";
             // 
             // btnDBconnect
             // 
-            this.btnDBconnect.Location = new System.Drawing.Point(519, 110);
+            this.btnDBconnect.Location = new System.Drawing.Point(418, 317);
             this.btnDBconnect.Name = "btnDBconnect";
             this.btnDBconnect.Size = new System.Drawing.Size(114, 64);
             this.btnDBconnect.TabIndex = 21;
@@ -198,88 +115,105 @@
             // 
             this.btnReadDataFromDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReadDataFromDB.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnReadDataFromDB.Location = new System.Drawing.Point(269, 264);
+            this.btnReadDataFromDB.Location = new System.Drawing.Point(225, 317);
             this.btnReadDataFromDB.Name = "btnReadDataFromDB";
             this.btnReadDataFromDB.Size = new System.Drawing.Size(143, 37);
             this.btnReadDataFromDB.TabIndex = 22;
             this.btnReadDataFromDB.Text = "All operations entered";
             this.btnReadDataFromDB.UseVisualStyleBackColor = true;
+            this.btnReadDataFromDB.Visible = false;
             this.btnReadDataFromDB.Click += new System.EventHandler(this.BtnReadDataFromDB_Click);
             // 
-            // button1
+            // pictureBox5
             // 
-            this.button1.Location = new System.Drawing.Point(327, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Operation Data Enter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox5.Image = global::SRFNprojectJULY2019proj.Properties.Resources.configurationWheels;
+            this.pictureBox5.Location = new System.Drawing.Point(543, 50);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(127, 170);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 33;
+            this.pictureBox5.TabStop = false;
             // 
-            // button2
+            // pictureBox4
             // 
-            this.button2.Location = new System.Drawing.Point(327, 131);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 23);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Operation Data Enter";
-            this.button2.UseVisualStyleBackColor = true;
+            this.pictureBox4.Image = global::SRFNprojectJULY2019proj.Properties.Resources.editing_july18th;
+            this.pictureBox4.Location = new System.Drawing.Point(379, 50);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(118, 170);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 32;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
             // 
-            // button3
+            // pictureBox3
             // 
-            this.button3.Location = new System.Drawing.Point(327, 160);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(131, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Operation Data Enter";
-            this.button3.UseVisualStyleBackColor = true;
+            this.pictureBox3.Image = global::SRFNprojectJULY2019proj.Properties.Resources.ListOfElements;
+            this.pictureBox3.Location = new System.Drawing.Point(200, 50);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(133, 170);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 31;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
-            // button4
+            // pictureBox2
             // 
-            this.button4.Location = new System.Drawing.Point(327, 192);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(131, 23);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Operation Data Enter";
-            this.button4.UseVisualStyleBackColor = true;
+            this.pictureBox2.Image = global::SRFNprojectJULY2019proj.Properties.Resources.switchOnOff;
+            this.pictureBox2.Location = new System.Drawing.Point(57, 295);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(101, 86);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
-            // button5
+            // PBAcceptMS
             // 
-            this.button5.Location = new System.Drawing.Point(327, 220);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(131, 23);
-            this.button5.TabIndex = 27;
-            this.button5.Text = "Operation Data Enter";
-            this.button5.UseVisualStyleBackColor = true;
+            this.PBAcceptMS.Image = global::SRFNprojectJULY2019proj.Properties.Resources.acceptButton;
+            this.PBAcceptMS.Location = new System.Drawing.Point(559, 296);
+            this.PBAcceptMS.Name = "PBAcceptMS";
+            this.PBAcceptMS.Size = new System.Drawing.Size(111, 85);
+            this.PBAcceptMS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBAcceptMS.TabIndex = 29;
+            this.PBAcceptMS.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SRFNprojectJULY2019proj.Properties.Resources.savings;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(129, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // MainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 316);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(704, 403);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.PBAcceptMS);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnReadDataFromDB);
             this.Controls.Add(this.btnDBconnect);
-            this.Controls.Add(this.label6operation);
-            this.Controls.Add(this.label5operation);
             this.Controls.Add(this.label4operation);
             this.Controls.Add(this.label3operation);
             this.Controls.Add(this.label2operation);
-            this.Controls.Add(this.MFokbtn);
-            this.Controls.Add(this.MFCancelbtn);
             this.Controls.Add(this.btnMFdataEnter);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox1ISIN);
             this.Controls.Add(this.label1operation);
             this.Name = "MainScreenForm";
             this.Text = "MainScreen";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBAcceptMS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,26 +222,17 @@
         #endregion
 
         private System.Windows.Forms.Label label1operation;
-        private System.Windows.Forms.TextBox textBox1ISIN;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button btnMFdataEnter;
-        private System.Windows.Forms.Button MFCancelbtn;
-        private System.Windows.Forms.Button MFokbtn;
         private System.Windows.Forms.Label label2operation;
         private System.Windows.Forms.Label label3operation;
         private System.Windows.Forms.Label label4operation;
-        private System.Windows.Forms.Label label5operation;
-        private System.Windows.Forms.Label label6operation;
         private System.Windows.Forms.Button btnDBconnect;
         private System.Windows.Forms.Button btnReadDataFromDB;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PBAcceptMS;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

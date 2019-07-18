@@ -117,32 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="editing-july18th" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editing-july18th.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button-STOP-cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button-STOP-cancel.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="acceptButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\acceptButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button-GO-accept" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button-GO-accept.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ListOfElements" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ListOfElements.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="savings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\savings.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="switchOnOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\switchOnOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="taxManagSystem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagesSRFN\taxManagSystem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="configurationWheels" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\configurationWheels.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

@@ -52,6 +52,12 @@
     <Compile Include="All_ODE_Screen.Designer.cs">
       <DependentUpon>All_ODE_Screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit_Operations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Operations.Designer.cs">
+      <DependentUpon>Edit_Operations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Insert_Each_ODE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="All_ODE_Screen.resx">
       <DependentUpon>All_ODE_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Operations.resx">
+      <DependentUpon>Edit_Operations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Insert_Each_ODE.resx">
       <DependentUpon>Insert_Each_ODE.cs</DependentUpon>
@@ -110,6 +119,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="imagesSRFN\taxManagSystem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceptButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switchOnOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-GO-accept.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-STOP-cancel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListOfElements.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editing-july18th.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configurationWheels.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
