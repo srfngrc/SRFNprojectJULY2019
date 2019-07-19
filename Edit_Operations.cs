@@ -20,7 +20,7 @@ namespace SRFNprojectJULY2019proj
         //string connetionString = null;
         //static SqlConnection connecSRFN;
         //IT CANNOT BE DONE IN 2 STEPS THE DECLARATION IN THE MAIN CLASS
-        string connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
+        static string connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
                                 "packet size=4096;" +
                                 "user id=serafin;" +
                                 "pwd=19771977;" +
@@ -41,7 +41,7 @@ namespace SRFNprojectJULY2019proj
         public void DisplayData()
         {
             SqlCommand command = new SqlCommand("SELECT * FROM Nutella.operations;", connecSRFN);
-            DisplayData();
+            //DisplayData();
             connecSRFN.Open();
             SqlDataReader reader = command.ExecuteReader();
             DataTable dataTableSRFN = new DataTable();
@@ -49,6 +49,13 @@ namespace SRFNprojectJULY2019proj
             dataGridView87.DataSource = dataTableSRFN;
         }
 
+        private void dataGridView87_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //textBox1.Text = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
+            textBox1.Text = dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBox2.Text = dataGridView87.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox3.Text = dataGridView87.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
         ////Display Data in DataGridView  
         //private void DisplayData()
         //{
@@ -85,7 +92,7 @@ namespace SRFNprojectJULY2019proj
                 cmd = new SqlCommand("update Nutella.operations SET isin=@isin WHERE operationId=@operationId", connecSRFN);
 
                 connecSRFN.Open();
-                cmd.Parameters.AddWithValue("@operationId", ID);
+                cmd.Parameters.AddWithValue("@operationId", '4'); //ID
                 cmd.Parameters.AddWithValue("@isin", textBox1.Text);
                 //cmd.Parameters.AddWithValue("@state", txt_State.Text);
                 cmd.ExecuteNonQuery();
@@ -104,13 +111,14 @@ namespace SRFNprojectJULY2019proj
         //DELETE RECORDDD
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            //if (ID != 0)
+            if (textBox1.Text != "")
             {
                 SqlCommand cmd;
-                cmd = new SqlCommand("delete Nutella.operations where operationId=@operationId", con);
+                cmd = new SqlCommand("delete Nutella.operations where operationId=@operationId", connecSRFN);
                 connecSRFN.Open();
                 //cmd.Parameters.AddWithValue("@id", ID);
-                cmd.Parameters.AddWithValue("@operationId", ID); //ID esta bien ahi?
+                cmd.Parameters.AddWithValue("@operationId", '4'); //ID esta bien ahi?no, harcodeo el 4
                 cmd.ExecuteNonQuery();
                 connecSRFN.Close();
                 MessageBox.Show("Record Deleted Successfully!");
