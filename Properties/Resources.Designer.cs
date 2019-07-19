@@ -73,6 +73,16 @@ namespace SRFNprojectJULY2019proj.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_delete_7847471 {
+            get {
+                object obj = ResourceManager.GetObject("button-delete-7847471", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_GO_accept {
             get {
                 object obj = ResourceManager.GetObject("button-GO-accept", resourceCulture);
@@ -96,6 +106,16 @@ namespace SRFNprojectJULY2019proj.Properties {
         internal static System.Drawing.Bitmap configurationWheels {
             get {
                 object obj = ResourceManager.GetObject("configurationWheels", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DELETE_button {
+            get {
+                object obj = ResourceManager.GetObject("DELETE button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,16 @@ namespace SRFNprojectJULY2019proj.Properties {
         internal static System.Drawing.Bitmap taxManagSystem {
             get {
                 object obj = ResourceManager.GetObject("taxManagSystem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UPDATE_button {
+            get {
+                object obj = ResourceManager.GetObject("UPDATE button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

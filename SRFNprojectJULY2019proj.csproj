@@ -144,5 +144,14 @@
   <ItemGroup>
     <None Include="Resources\configurationWheels.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-delete-7847471.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DELETE button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UPDATE button.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

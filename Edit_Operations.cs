@@ -13,34 +13,115 @@ namespace SRFNprojectJULY2019proj
 {
     public partial class Edit_Operations : Form
     {
-        public Edit_Operations()
-        {
-            InitializeComponent();
-            LoadDataFromDBtoGrid_SRFN();
-        }
+        //SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=Sample;Integrated Security=true;");
+        //SqlCommand cmd;
+        //SqlDataAdapter adapt;
 
-        public void LoadDataFromDBtoGrid_SRFN()
-        {
-            string connetionString = null;
-            SqlConnection connecSRFN;
-
-            connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
+        //string connetionString = null;
+        //static SqlConnection connecSRFN;
+        //IT CANNOT BE DONE IN 2 STEPS THE DECLARATION IN THE MAIN CLASS
+        string connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
                                 "packet size=4096;" +
                                 "user id=serafin;" +
                                 "pwd=19771977;" +
                                 "data source=DatabaseSRFN.mssql.somee.com;" +
                                 "persist security info=False;" +
                                 "initial catalog=DatabaseSRFN";
+        SqlConnection connecSRFN = new SqlConnection(connetionString);
 
-            connecSRFN = new SqlConnection(connetionString);
+        public Edit_Operations()
+        {
+            InitializeComponent();
+            DisplayData();
+        }
 
+        public void LoadDataFromDBtoGrid_SRFN()
+        {
+        }
+        public void DisplayData()
+        {
             SqlCommand command = new SqlCommand("SELECT * FROM Nutella.operations;", connecSRFN);
+            DisplayData();
             connecSRFN.Open();
             SqlDataReader reader = command.ExecuteReader();
             DataTable dataTableSRFN = new DataTable();
-
             dataTableSRFN.Load(reader);
             dataGridView87.DataSource = dataTableSRFN;
+        }
+
+        ////Display Data in DataGridView  
+        //private void DisplayData()
+        //{
+        //    con.Open();
+        //    DataTable dt = new DataTable();
+        //    adapt = new SqlDataAdapter("select * from tbl_Record", con);
+        //    adapt.Fill(dt);
+        //    dataGridView87.DataSource = dt;
+        //    con.Close();
+        //}
+        //Clear Data  
+        private void ClearData()
+        {
+            textBox1.Text = "";
+            dateTimePicker1.ResetText();
+            dateTimePicker2.ResetText();
+            textBox2.Text = "";
+            textBox3.Text = "";
+            //ID = 0;
+        }
+
+        private void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //UPDATE RECORDDD
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
+            {
+                SqlCommand cmd;
+                //cmd = new SqlCommand("update tbl_Record set Name=@name,State=@state where ID=@id", con);
+                cmd = new SqlCommand("update Nutella.operations SET isin=@isin WHERE operationId=@operationId", connecSRFN);
+
+                connecSRFN.Open();
+                cmd.Parameters.AddWithValue("@operationId", ID);
+                cmd.Parameters.AddWithValue("@isin", textBox1.Text);
+                //cmd.Parameters.AddWithValue("@state", txt_State.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record Updated Successfully");
+                connecSRFN.Close();
+                //DisplayData();
+                LoadDataFromDBtoGrid_SRFN();
+                ClearData();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Update");
+            }
+        }
+
+        //DELETE RECORDDD
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            if (ID != 0)
+            {
+                SqlCommand cmd;
+                cmd = new SqlCommand("delete Nutella.operations where operationId=@operationId", con);
+                connecSRFN.Open();
+                //cmd.Parameters.AddWithValue("@id", ID);
+                cmd.Parameters.AddWithValue("@operationId", ID); //ID esta bien ahi?
+                cmd.ExecuteNonQuery();
+                connecSRFN.Close();
+                MessageBox.Show("Record Deleted Successfully!");
+                //DisplayData();
+                LoadDataFromDBtoGrid_SRFN();
+                ClearData();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Delete");
+            }
         }
     }
 
