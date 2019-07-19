@@ -29,6 +29,8 @@ namespace SRFNprojectJULY2019proj
                                 "initial catalog=DatabaseSRFN";
         SqlConnection connecSRFN = new SqlConnection(connetionString);
 
+        static int idOperationSRFN = -1;
+
         public Edit_Operations()
         {
             InitializeComponent();
@@ -52,9 +54,10 @@ namespace SRFNprojectJULY2019proj
         private void dataGridView87_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //textBox1.Text = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
-            textBox1.Text = dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBox2.Text = dataGridView87.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBox3.Text = dataGridView87.Rows[e.RowIndex].Cells[2].Value.ToString();
+            idOperationSRFN = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
+            textBox1.Text = dataGridView87.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox2.Text = dataGridView87.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBox3.Text = dataGridView87.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
         ////Display Data in DataGridView  
         //private void DisplayData()
@@ -92,7 +95,7 @@ namespace SRFNprojectJULY2019proj
                 cmd = new SqlCommand("update Nutella.operations SET isin=@isin WHERE operationId=@operationId", connecSRFN);
 
                 connecSRFN.Open();
-                cmd.Parameters.AddWithValue("@operationId", '4'); //ID
+                cmd.Parameters.AddWithValue("@operationId", idOperationSRFN); //ID
                 cmd.Parameters.AddWithValue("@isin", textBox1.Text);
                 //cmd.Parameters.AddWithValue("@state", txt_State.Text);
                 cmd.ExecuteNonQuery();
@@ -118,7 +121,7 @@ namespace SRFNprojectJULY2019proj
                 cmd = new SqlCommand("delete Nutella.operations where operationId=@operationId", connecSRFN);
                 connecSRFN.Open();
                 //cmd.Parameters.AddWithValue("@id", ID);
-                cmd.Parameters.AddWithValue("@operationId", '4'); //ID esta bien ahi?no, harcodeo el 4
+                cmd.Parameters.AddWithValue("@operationId", idOperationSRFN); //ID esta bien ahi?no, harcodeo el 4
                 cmd.ExecuteNonQuery();
                 connecSRFN.Close();
                 MessageBox.Show("Record Deleted Successfully!");
