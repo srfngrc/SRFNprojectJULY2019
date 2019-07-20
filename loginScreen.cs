@@ -46,7 +46,8 @@ namespace SRFNprojectJULY2019proj
             }
             else
             {
-                MessageBox.Show("SORRY, THE USER AND PASSWORD INDICATED ARE NOT VALID. CHECK THE SPELLING PLEASE");
+                //MessageBox.Show("SORRY, THE USER AND PASSWORD INDICATED ARE NOT VALID. CHECK THE SPELLING PLEASE");
+                MessageBox.Show("sorry");
             }
 
         }
