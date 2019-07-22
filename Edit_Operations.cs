@@ -20,13 +20,18 @@ namespace SRFNprojectJULY2019proj
         //string connetionString = null;
         //static SqlConnection connecSRFN;
         //IT CANNOT BE DONE IN 2 STEPS THE DECLARATION IN THE MAIN CLASS
-        static string connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
-                                "packet size=4096;" +
-                                "user id=serafin;" +
-                                "pwd=19771977;" +
-                                "data source=DatabaseSRFN.mssql.somee.com;" +
-                                "persist security info=False;" +
-                                "initial catalog=DatabaseSRFN";
+        //static string connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
+        //                        "packet size=4096;" +
+        //                        "user id=serafin;" +
+        //                        "pwd=19771977;" +
+        //                        "data source=DatabaseSRFN.mssql.somee.com;" +
+        //                        "persist security info=False;" +
+        //                        "initial catalog=DatabaseSRFN";
+
+        static string connetionString = "Server=DatabaseSRFN.mssql.somee.com;" +
+                "Database=DatabaseSRFN;" +
+                "User Id=serafin;" +
+                "Password = 19771977; ";
         SqlConnection connecSRFN = new SqlConnection(connetionString);
 
         static int idOperationSRFN = -1;
@@ -115,18 +120,26 @@ namespace SRFNprojectJULY2019proj
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             //if (ID != 0)
-            if (textBox1.Text != "")
+            if (TBoperationId.Text != string.Empty)
             {
                 SqlCommand cmd;
-                cmd = new SqlCommand("delete Nutella.operations where operationId=@operationId", connecSRFN);
+                string query123 = "delete Nutella.operations where operationId="+
+                    TBoperationId.Text +
+                    ";";
+                cmd = new SqlCommand(query123, connecSRFN);
+                connecSRFN.Close();
                 connecSRFN.Open();
                 //cmd.Parameters.AddWithValue("@id", ID);
-                cmd.Parameters.AddWithValue("@operationId", idOperationSRFN); //ID esta bien ahi?no, harcodeo el 4
+                //cmd.Parameters.AddWithValue("@operationId", idOperationSRFN); //ID esta bien ahi?no, harcodeo el 4
                 cmd.ExecuteNonQuery();
-                connecSRFN.Close();
-                MessageBox.Show("Record Deleted Successfully!");
-                //DisplayData();
-                LoadDataFromDBtoGrid_SRFN();
+                //ExecuteNonQuery is used for inserts,updates and deletes. Not for selects.
+                if (connecSRFN.State == ConnectionState.Open)
+                {
+                    connecSRFN.Close();
+                    MessageBox.Show("Record Deleted Successfully!");
+                }
+                DisplayData();
+                //LoadDataFromDBtoGrid_SRFN();
                 ClearData();
             }
             else
