@@ -150,7 +150,28 @@ namespace SRFNprojectJULY2019proj
 
         private void DataGridView87_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //TBoperationId.Text = dataGridView87.SelectedRows.;
+            //TBoperationId.Text = Convert.ToInt32(dataGridView87[e.ColumnIndex, e.RowIndex].Value.ToString());
+            MessageBox.Show("hhhhhhhhhhhhh:     " + dataGridView87[e.ColumnIndex, e.RowIndex].Value.ToString());
+            MessageBox.Show("column number is:  " + e.ColumnIndex);
+            //TBoperationId.Text = dataGridView87[0, e.RowIndex].Value;
+            //string.Format.int
+            if (dataGridView87.SelectedRows.Count > 0)
+            {
+                string aa = dataGridView87.SelectedRows[0].Cells[0].Value + string.Empty;
+                MessageBox.Show("POSITION 0 OF THAT ROW is:  " + aa);
+            }
+        }
+
+        private void SelectionChanget(object sender, EventArgs e)
+        {
+            //if (dataGridView87.SelectedRows.Count = 0)
+            //{
+            //    textBox1.Text = dataGridView87.SelectedRows(0).Cells(0).Value;
+            //    dateTimePicker1.Value = dataGridView87.SelectedRows(1).
+            //    textBox2.Value = dataGridView87.SelectedRows(0).Cells(1).Value;
+            //    textBox3.Value = dataGridView87.SelectedRows(0).Cells(2).Value;
+            //    //textBox1.Value = dataGridView87.SelectedRows(0).Cells(3).Value;
+            //}
         }
     }
 
