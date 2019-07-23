@@ -147,6 +147,11 @@ namespace SRFNprojectJULY2019proj
                 MessageBox.Show("Please Select Record to Delete");
             }
         }
+
+        private void DataGridView87_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //TBoperationId.Text = dataGridView87.SelectedRows.;
+        }
     }
 
    
