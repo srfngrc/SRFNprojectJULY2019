@@ -118,6 +118,12 @@ namespace SRFNprojectJULY2019proj
             b.Show();
             this.Hide();
         }
-         
+
+        private void PictureBox5_Click(object sender, EventArgs e)
+        {
+            ManageAppUsers c = new ManageAppUsers();
+            this.Hide();
+            c.Show();
+        }
     }
 }

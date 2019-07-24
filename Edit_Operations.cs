@@ -42,9 +42,6 @@ namespace SRFNprojectJULY2019proj
             DisplayData();
         }
 
-        public void LoadDataFromDBtoGrid_SRFN()
-        {
-        }
         public void DisplayData()
         {
             SqlCommand command = new SqlCommand("SELECT * FROM Nutella.operations;", connecSRFN);
@@ -54,67 +51,78 @@ namespace SRFNprojectJULY2019proj
             DataTable dataTableSRFN = new DataTable();
             dataTableSRFN.Load(reader);
             dataGridView87.DataSource = dataTableSRFN;
+            connecSRFN.Close();
         }
 
         private void dataGridView87_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //textBox1.Text = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
             idOperationSRFN = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
-            textBox1.Text = dataGridView87.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBox2.Text = dataGridView87.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBox3.Text = dataGridView87.Rows[e.RowIndex].Cells[3].Value.ToString();
+            TBisin.Text = dataGridView87.Rows[e.RowIndex].Cells[1].Value.ToString();
+            TBamount.Text = dataGridView87.Rows[e.RowIndex].Cells[2].Value.ToString();
+            TBdescription.Text = dataGridView87.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
-        ////Display Data in DataGridView  
-        //private void DisplayData()
-        //{
-        //    con.Open();
-        //    DataTable dt = new DataTable();
-        //    adapt = new SqlDataAdapter("select * from tbl_Record", con);
-        //    adapt.Fill(dt);
-        //    dataGridView87.DataSource = dt;
-        //    con.Close();
-        //}
+
         //Clear Data  
         private void ClearData()
         {
-            textBox1.Text = "";
-            dateTimePicker1.ResetText();
-            dateTimePicker2.ResetText();
-            textBox2.Text = "";
-            textBox3.Text = "";
-            //ID = 0;
-        }
-
-        private void TextBox3_TextChanged(object sender, EventArgs e)
-        {
-
+            TBoperationId.Text = "";
+            TBisin.Text = "";
+            DTPpurchaseDate.ResetText();
+            DTPsellDate.ResetText();
+            TBamount.Text = "";
+            TBdescription.Text = "";
         }
 
         //UPDATE RECORDDD
-        private void PictureBox2_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
-            {
-                SqlCommand cmd;
-                //cmd = new SqlCommand("update tbl_Record set Name=@name,State=@state where ID=@id", con);
-                cmd = new SqlCommand("update Nutella.operations SET isin=@isin WHERE operationId=@operationId", connecSRFN);
 
-                connecSRFN.Open();
-                cmd.Parameters.AddWithValue("@operationId", idOperationSRFN); //ID
-                cmd.Parameters.AddWithValue("@isin", textBox1.Text);
-                //cmd.Parameters.AddWithValue("@state", txt_State.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Record Updated Successfully");
-                connecSRFN.Close();
-                //DisplayData();
-                LoadDataFromDBtoGrid_SRFN();
-                ClearData();
-            }
-            else
+        private void PBUpdate_Click(object sender, EventArgs e)
+        {
+            try
             {
-                MessageBox.Show("Please Select Record to Update");
+                if (TBoperationId.Text != "")
+                //TBisin.Text != "" && TBamount.Text != "" && TBdescription.Text != "")
+                {
+                    SqlCommand cmd;
+                    cmd = new SqlCommand("update Nutella.operations SET " +
+                        "isin=@isin," +
+                        "purchaseDate=@PurchaseDate," +
+                        "sellDate= @SellDate," +
+                        "amount= @amount," +
+                        "description= @description " +
+                        "WHERE operationId=@operationId;", connecSRFN);
+
+                    connecSRFN.Open();
+                    cmd.Parameters.AddWithValue("@operationId", TBoperationId.Text);
+                    cmd.Parameters.AddWithValue("@isin", TBisin.Text);
+                    cmd.Parameters.AddWithValue("@PurchaseDate", DTPpurchaseDate.Value);
+                    cmd.Parameters.AddWithValue("@SellDate", DTPsellDate.Value);
+                    cmd.Parameters.AddWithValue("@amount", TBamount.Text);
+                    cmd.Parameters.AddWithValue("@description", TBdescription.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Record Updated Successfully");
+                    connecSRFN.Close();
+                    DisplayData();
+                    ClearData();
+                }
+                else
+                {
+                    MessageBox.Show("Please Select a Record to Update");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connecSRFN.State == ConnectionState.Open)
+                {
+                    connecSRFN.Close();
+                }
             }
         }
+        
 
         //DELETE RECORDDD
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -150,28 +158,30 @@ namespace SRFNprojectJULY2019proj
 
         private void DataGridView87_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //TBoperationId.Text = Convert.ToInt32(dataGridView87[e.ColumnIndex, e.RowIndex].Value.ToString());
-            MessageBox.Show("hhhhhhhhhhhhh:     " + dataGridView87[e.ColumnIndex, e.RowIndex].Value.ToString());
-            MessageBox.Show("column number is:  " + e.ColumnIndex);
-            //TBoperationId.Text = dataGridView87[0, e.RowIndex].Value;
-            //string.Format.int
-            if (dataGridView87.SelectedRows.Count > 0)
-            {
-                string aa = dataGridView87.SelectedRows[0].Cells[0].Value + string.Empty;
-                MessageBox.Show("POSITION 0 OF THAT ROW is:  " + aa);
-            }
+            ////TBoperationId.Text = Convert.ToInt32(dataGridView87[e.ColumnIndex, e.RowIndex].Value.ToString());
+            //MessageBox.Show("hhhhhhhhhhhhh:     " + dataGridView87[e.ColumnIndex, e.RowIndex].Value.ToString());
+            //MessageBox.Show("column number is:  " + e.ColumnIndex);
+            ////TBoperationId.Text = dataGridView87[0, e.RowIndex].Value;
+            ////string.Format.int
+            //if (dataGridView87.SelectedRows.Count > 0)
+            //{
+            //    TBoperationId.Text = dataGridView87.SelectedRows[0].Cells[0].Value + string.Empty;
+            //    string aa = dataGridView87.SelectedRows[0].Cells[0].Value + string.Empty;
+            //    MessageBox.Show("POSITION 0 OF THAT ROW is:  " + aa);
+            //}
         }
 
         private void SelectionChanget(object sender, EventArgs e)
         {
-            //if (dataGridView87.SelectedRows.Count = 0)
-            //{
-            //    textBox1.Text = dataGridView87.SelectedRows(0).Cells(0).Value;
-            //    dateTimePicker1.Value = dataGridView87.SelectedRows(1).
-            //    textBox2.Value = dataGridView87.SelectedRows(0).Cells(1).Value;
-            //    textBox3.Value = dataGridView87.SelectedRows(0).Cells(2).Value;
-            //    //textBox1.Value = dataGridView87.SelectedRows(0).Cells(3).Value;
-            //}
+            if (dataGridView87.SelectedRows.Count > 0)
+            {
+                TBoperationId.Text = dataGridView87.SelectedRows[0].Cells[0].Value + string.Empty;
+                TBisin.Text = dataGridView87.SelectedRows[0].Cells[1].Value + string.Empty;
+                DTPpurchaseDate.Text = dataGridView87.SelectedRows[0].Cells[2].Value.ToString() + string.Empty;
+                DTPsellDate.Text = dataGridView87.SelectedRows[0].Cells[3].Value.ToString() + string.Empty;
+                TBamount.Text = dataGridView87.SelectedRows[0].Cells[4].Value.ToString() + string.Empty;
+                TBdescription.Text = dataGridView87.SelectedRows[0].Cells[5].Value.ToString() + String.Empty;
+            }
         }
     }
 

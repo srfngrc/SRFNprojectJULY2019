@@ -76,8 +76,15 @@
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageAppUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAppUsers.Designer.cs">
+      <DependentUpon>ManageAppUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures.cs" />
     <EmbeddedResource Include="All_ODE_Screen.resx">
       <DependentUpon>All_ODE_Screen.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAppUsers.resx">
+      <DependentUpon>ManageAppUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

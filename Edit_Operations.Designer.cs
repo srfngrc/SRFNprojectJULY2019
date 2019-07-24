@@ -29,20 +29,26 @@
         private void InitializeComponent()
         {
             this.dataGridView87 = new System.Windows.Forms.DataGridView();
+            this.PBdelete = new System.Windows.Forms.PictureBox();
+            this.PBupdate = new System.Windows.Forms.PictureBox();
+            this.TBisin = new System.Windows.Forms.TextBox();
+            this.TBamount = new System.Windows.Forms.TextBox();
+            this.DTPpurchaseDate = new System.Windows.Forms.DateTimePicker();
+            this.DTPsellDate = new System.Windows.Forms.DateTimePicker();
+            this.TBdescription = new System.Windows.Forms.TextBox();
+            this.TBoperationId = new System.Windows.Forms.TextBox();
             this.operationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PBdelete = new System.Windows.Forms.PictureBox();
-            this.PBupdate = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.TBoperationId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView87)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBdelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBupdate)).BeginInit();
@@ -60,14 +66,79 @@
             this.sellDate,
             this.amount,
             this.description});
-            this.dataGridView87.Location = new System.Drawing.Point(12, 21);
+            this.dataGridView87.Location = new System.Drawing.Point(12, 12);
             this.dataGridView87.Name = "dataGridView87";
             this.dataGridView87.ReadOnly = true;
             this.dataGridView87.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView87.Size = new System.Drawing.Size(661, 357);
+            this.dataGridView87.Size = new System.Drawing.Size(599, 363);
             this.dataGridView87.TabIndex = 0;
             this.dataGridView87.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView87_CellContentClick);
             this.dataGridView87.SelectionChanged += new System.EventHandler(this.SelectionChanget);
+            // 
+            // PBdelete
+            // 
+            this.PBdelete.Image = global::SRFNprojectJULY2019proj.Properties.Resources.DELETE_button;
+            this.PBdelete.Location = new System.Drawing.Point(484, 415);
+            this.PBdelete.Name = "PBdelete";
+            this.PBdelete.Size = new System.Drawing.Size(127, 93);
+            this.PBdelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBdelete.TabIndex = 3;
+            this.PBdelete.TabStop = false;
+            this.PBdelete.Click += new System.EventHandler(this.PictureBox1_Click);
+            // 
+            // PBupdate
+            // 
+            this.PBupdate.Image = global::SRFNprojectJULY2019proj.Properties.Resources.UPDATE_button;
+            this.PBupdate.Location = new System.Drawing.Point(346, 415);
+            this.PBupdate.Name = "PBupdate";
+            this.PBupdate.Size = new System.Drawing.Size(132, 93);
+            this.PBupdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBupdate.TabIndex = 2;
+            this.PBupdate.TabStop = false;
+            this.PBupdate.Click += new System.EventHandler(this.PBUpdate_Click);
+            // 
+            // TBisin
+            // 
+            this.TBisin.Location = new System.Drawing.Point(131, 415);
+            this.TBisin.Name = "TBisin";
+            this.TBisin.Size = new System.Drawing.Size(100, 20);
+            this.TBisin.TabIndex = 4;
+            // 
+            // TBamount
+            // 
+            this.TBamount.Location = new System.Drawing.Point(131, 492);
+            this.TBamount.Name = "TBamount";
+            this.TBamount.Size = new System.Drawing.Size(100, 20);
+            this.TBamount.TabIndex = 5;
+            // 
+            // DTPpurchaseDate
+            // 
+            this.DTPpurchaseDate.Location = new System.Drawing.Point(131, 441);
+            this.DTPpurchaseDate.Name = "DTPpurchaseDate";
+            this.DTPpurchaseDate.Size = new System.Drawing.Size(200, 20);
+            this.DTPpurchaseDate.TabIndex = 6;
+            // 
+            // DTPsellDate
+            // 
+            this.DTPsellDate.Location = new System.Drawing.Point(131, 466);
+            this.DTPsellDate.Name = "DTPsellDate";
+            this.DTPsellDate.Size = new System.Drawing.Size(200, 20);
+            this.DTPsellDate.TabIndex = 7;
+            // 
+            // TBdescription
+            // 
+            this.TBdescription.Location = new System.Drawing.Point(131, 518);
+            this.TBdescription.Name = "TBdescription";
+            this.TBdescription.Size = new System.Drawing.Size(100, 20);
+            this.TBdescription.TabIndex = 8;
+            // 
+            // TBoperationId
+            // 
+            this.TBoperationId.Location = new System.Drawing.Point(131, 389);
+            this.TBoperationId.Name = "TBoperationId";
+            this.TBoperationId.ReadOnly = true;
+            this.TBoperationId.Size = new System.Drawing.Size(100, 20);
+            this.TBoperationId.TabIndex = 9;
             // 
             // operationId
             // 
@@ -75,6 +146,7 @@
             this.operationId.HeaderText = "ID";
             this.operationId.Name = "operationId";
             this.operationId.ReadOnly = true;
+            this.operationId.Width = 50;
             // 
             // isin
             // 
@@ -89,6 +161,7 @@
             this.purchaseDate.HeaderText = "Purchase Date";
             this.purchaseDate.Name = "purchaseDate";
             this.purchaseDate.ReadOnly = true;
+            this.purchaseDate.Width = 105;
             // 
             // sellDate
             // 
@@ -111,82 +184,77 @@
             this.description.Name = "description";
             this.description.ReadOnly = true;
             // 
-            // PBdelete
+            // label1
             // 
-            this.PBdelete.Image = global::SRFNprojectJULY2019proj.Properties.Resources.DELETE_button;
-            this.PBdelete.Location = new System.Drawing.Point(529, 423);
-            this.PBdelete.Name = "PBdelete";
-            this.PBdelete.Size = new System.Drawing.Size(135, 95);
-            this.PBdelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBdelete.TabIndex = 3;
-            this.PBdelete.TabStop = false;
-            this.PBdelete.Click += new System.EventHandler(this.PictureBox1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 422);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "IN Number: ";
             // 
-            // PBupdate
+            // label2
             // 
-            this.PBupdate.Image = global::SRFNprojectJULY2019proj.Properties.Resources.UPDATE_button;
-            this.PBupdate.Location = new System.Drawing.Point(371, 423);
-            this.PBupdate.Name = "PBupdate";
-            this.PBupdate.Size = new System.Drawing.Size(132, 95);
-            this.PBupdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBupdate.TabIndex = 2;
-            this.PBupdate.TabStop = false;
-            this.PBupdate.Click += new System.EventHandler(this.PictureBox2_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 447);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Purchase Date: ";
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 394);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 472);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Sell Date:";
             // 
-            // textBox2
+            // label4
             // 
-            this.textBox2.Location = new System.Drawing.Point(135, 472);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 495);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Operat Amount: ";
             // 
-            // dateTimePicker1
+            // label5
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(135, 420);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 521);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Operat Description:";
             // 
-            // dateTimePicker2
+            // label6
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(135, 446);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(135, 498);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
-            // 
-            // TBoperationId
-            // 
-            this.TBoperationId.Location = new System.Drawing.Point(12, 449);
-            this.TBoperationId.Name = "TBoperationId";
-            this.TBoperationId.Size = new System.Drawing.Size(100, 20);
-            this.TBoperationId.TabIndex = 9;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(27, 396);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Operation Id:";
             // 
             // Edit_Operations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 540);
+            this.ClientSize = new System.Drawing.Size(619, 549);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TBoperationId);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBdescription);
+            this.Controls.Add(this.DTPsellDate);
+            this.Controls.Add(this.DTPpurchaseDate);
+            this.Controls.Add(this.TBamount);
+            this.Controls.Add(this.TBisin);
             this.Controls.Add(this.PBdelete);
             this.Controls.Add(this.PBupdate);
             this.Controls.Add(this.dataGridView87);
@@ -205,11 +273,11 @@
         private System.Windows.Forms.DataGridView dataGridView87;
         private System.Windows.Forms.PictureBox PBupdate;
         private System.Windows.Forms.PictureBox PBdelete;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TBisin;
+        private System.Windows.Forms.TextBox TBamount;
+        private System.Windows.Forms.DateTimePicker DTPpurchaseDate;
+        private System.Windows.Forms.DateTimePicker DTPsellDate;
+        private System.Windows.Forms.TextBox TBdescription;
         private System.Windows.Forms.TextBox TBoperationId;
         private System.Windows.Forms.DataGridViewTextBoxColumn operationId;
         private System.Windows.Forms.DataGridViewTextBoxColumn isin;
@@ -217,5 +285,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sellDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
