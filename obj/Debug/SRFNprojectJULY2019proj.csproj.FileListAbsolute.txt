@@ -12,3 +12,4 @@ C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.MainScre
 C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.All_ODE_Screen.resources
 C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.Insert_Each_ODE.resources
 C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.Edit_Operations.resources
+C:\VSRepositories\SRFNprojectJULY2019\obj\Debug\SRFNprojectJULY2019proj.ManageAppUsers.resources
