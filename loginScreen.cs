@@ -41,7 +41,17 @@ namespace SRFNprojectJULY2019proj
             //IN CASE LOGIN AND PASSWORD ARE OK:
             if (ValidLogin)
             {
-                MainScreenForm mainWindow = new MainScreenForm();
+                //REFERENCE CODE
+                //myInfo infoFromLogin = new myInfo();
+                //infoFromLogin.loginMessage = "Welcome!! you are:" + TB_User.Text;
+                ////Pass it on!
+                //Main newFrom = new Main(infoFromLogin);
+
+                myInfo infoFromLogScr = new myInfo();
+                infoFromLogScr.IsAnAdminTheUser = true;
+
+                //MainScreenForm mainWindow = new MainScreenForm();
+                MainScreenForm mainWindow = new MainScreenForm(infoFromLogScr);
                 mainWindow.Show();
             }
             else

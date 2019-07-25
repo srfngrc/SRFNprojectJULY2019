@@ -8,6 +8,7 @@ namespace SRFNprojectJULY2019proj
 {
     public struct myInfo
     {
+        public bool IsAnAdminTheUser;
         public string AoperationId;
         public string Aisin;
         public DateTime ApurchaseDate;

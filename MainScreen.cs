@@ -17,6 +17,20 @@ namespace SRFNprojectJULY2019proj
         string connetionString = null;
         SqlConnection connecSRFN;
         SqlCommand command;
+
+        public MainScreenForm(myInfo infoFromLoginScreen)
+        {
+            if (infoFromLoginScreen.IsAnAdminTheUser == true)
+            {
+                pictureBox4.Visible = true;
+            }
+            else
+            {
+                pictureBox4.Visible = false;
+            }
+            InitializeComponent();
+        }
+
         public MainScreenForm()
         {
             InitializeComponent();
