@@ -13,6 +13,10 @@ namespace SRFNprojectJULY2019proj
 {
     public partial class loginScreen : Form
     {
+        string TheUserISadmin = "FALSE";
+        myInfo infoFromLogScr = new myInfo();
+        
+
         public loginScreen()
         {
             InitializeComponent();
@@ -41,23 +45,56 @@ namespace SRFNprojectJULY2019proj
             //IN CASE LOGIN AND PASSWORD ARE OK:
             if (ValidLogin)
             {
-                //REFERENCE CODE
-                //myInfo infoFromLogin = new myInfo();
-                //infoFromLogin.loginMessage = "Welcome!! you are:" + TB_User.Text;
-                ////Pass it on!
-                //Main newFrom = new Main(infoFromLogin);
-
-                myInfo infoFromLogScr = new myInfo();
-                infoFromLogScr.IsAnAdminTheUser = true;
-
-                //MainScreenForm mainWindow = new MainScreenForm();
+                //FIRST I CHECK IF THE USER IS ADMINISTRATOR OR NOT 
+                //TO PASS IT TO THE NEXT WINDOW FORM: MAINSCREEN
+                if (CheckIfUserIsAdmin(connecSRFN2))
+                {
+                    infoFromLogScr.IsAnAdminTheUser = true;
+                }
+                else
+                {
+                    infoFromLogScr.IsAnAdminTheUser = false;
+                }
                 MainScreenForm mainWindow = new MainScreenForm(infoFromLogScr);
                 mainWindow.Show();
             }
             else
             {
-                //MessageBox.Show("SORRY, THE USER AND PASSWORD INDICATED ARE NOT VALID. CHECK THE SPELLING PLEASE");
-                MessageBox.Show("sorry");
+                MessageBox.Show("Sorry, the user and password indicated are not valid");
+            }
+
+        }
+
+        
+
+        bool CheckIfUserIsAdmin(SqlConnection connection3)
+        {
+            using (connection3)
+            {
+                SqlCommand command3 = new SqlCommand(
+                        "SELECT isAdmin FROM Nutella.logins WHERE userName ='" +
+                        textBox1.Text +
+                        "';", connection3);
+                connection3.Open();
+
+                SqlDataReader readerofISADMINfield = command3.ExecuteReader();
+                if (readerofISADMINfield.HasRows)
+                {
+                    while (readerofISADMINfield.Read())
+                    {
+                        TheUserISadmin = readerofISADMINfield[0].ToString();
+                        if (TheUserISadmin == "TRUE")
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                else
+                {
+                    MessageBox.Show("No rows found in logins Table.");
+                    return false;
+                }
             }
 
         }

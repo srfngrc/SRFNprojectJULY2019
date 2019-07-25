@@ -20,15 +20,17 @@ namespace SRFNprojectJULY2019proj
 
         public MainScreenForm(myInfo infoFromLoginScreen)
         {
+            InitializeComponent();
             if (infoFromLoginScreen.IsAnAdminTheUser == true)
             {
-                this.pictureBox4.Visible = true;
+                MessageBox.Show("I DID enter the MainScreen Form as ADMIN");
+                SetValueOfPB4(true);
             }
             else
             {
-                this.pictureBox4.Visible = false;
+                MessageBox.Show("I entered the MainScreen Form as NORMAL USER");
+                SetValueOfPB4(false);
             }
-            InitializeComponent();
         }
 
         public MainScreenForm()
@@ -36,6 +38,10 @@ namespace SRFNprojectJULY2019proj
             InitializeComponent();
         }
 
+        private void SetValueOfPB4(bool AdminOrNot)
+        {
+            this.pictureBox4.Visible = AdminOrNot;
+        }
         private void MFCancelbtn_Click(object sender, EventArgs e)
         {
             //Application.Exit();
@@ -81,17 +87,20 @@ namespace SRFNprojectJULY2019proj
             try
             {
                 connecSRFN.Open();
-                MessageBox.Show("Connection Open ! ");
                 command = new SqlCommand(tax_sql, connecSRFN);
                 int numRowsAffected = command.ExecuteNonQuery();
-                MessageBox.Show("Number of rows affected: " + numRowsAffected);
                 command.Dispose();
-                connecSRFN.Close();
-                MessageBox.Show("if no exception thrown so far... Connection Closed !! ");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can not open connection ! " + ex.Message);
+                MessageBox.Show("Can not open the connection ! " + ex.Message);
+            }
+            finally
+            {
+                if (connecSRFN.State == ConnectionState.Open)
+                {
+                    connecSRFN.Close();
+                }
             }
         }
 
