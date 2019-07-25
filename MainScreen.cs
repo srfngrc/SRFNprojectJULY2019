@@ -22,11 +22,11 @@ namespace SRFNprojectJULY2019proj
         {
             if (infoFromLoginScreen.IsAnAdminTheUser == true)
             {
-                pictureBox4.Visible = true;
+                this.pictureBox4.Visible = true;
             }
             else
             {
-                pictureBox4.Visible = false;
+                this.pictureBox4.Visible = false;
             }
             InitializeComponent();
         }
