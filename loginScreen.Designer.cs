@@ -30,8 +30,8 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TBusername = new System.Windows.Forms.TextBox();
+            this.TBpassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -57,20 +57,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Username";
             // 
-            // textBox1
+            // TBusername
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 180);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 2;
+            this.TBusername.Location = new System.Drawing.Point(106, 180);
+            this.TBusername.Name = "TBusername";
+            this.TBusername.Size = new System.Drawing.Size(185, 20);
+            this.TBusername.TabIndex = 2;
             // 
-            // textBox2
+            // TBpassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(106, 232);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.TBpassword.Location = new System.Drawing.Point(106, 232);
+            this.TBpassword.Name = "TBpassword";
+            this.TBpassword.Size = new System.Drawing.Size(185, 20);
+            this.TBpassword.TabIndex = 3;
+            this.TBpassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -91,7 +91,7 @@
             this.btnLogIn.TabIndex = 5;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = false;
-            this.btnLogIn.Click += new System.EventHandler(this.Button1_Click);
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // buttonCancel
             // 
@@ -102,7 +102,7 @@
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
-            this.buttonCancel.Click += new System.EventHandler(this.Button2_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click_1);
             // 
             // loginScreen
             // 
@@ -112,11 +112,12 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBpassword);
+            this.Controls.Add(this.TBusername);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "loginScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -128,8 +129,8 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TBusername;
+        private System.Windows.Forms.TextBox TBpassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button buttonCancel;

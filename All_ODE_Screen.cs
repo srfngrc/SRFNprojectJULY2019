@@ -19,12 +19,7 @@ namespace SRFNprojectJULY2019proj
         public All_ODE_Screen()
         {
             InitializeComponent();
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
+            DataLoad();
         }
 
         private void Btn_EODE_Cancel_Click(object sender, EventArgs e)
@@ -38,16 +33,10 @@ namespace SRFNprojectJULY2019proj
             this.Close();
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //DataGridView1.Datasource
-        }
-
-        public void BtnLoadDataFromDBcust_Click(object sender, EventArgs e)
+        private void DataLoad()
         {
             string connetionString = null;
             SqlConnection connecSRFN;
-            //SqlCommand command;
             connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
                                 "packet size=4096;" +
                                 "user id=serafin;" +
@@ -59,62 +48,41 @@ namespace SRFNprojectJULY2019proj
             connecSRFN = new SqlConnection(connetionString);
 
             SqlCommand command = new SqlCommand(
-                //"SELECT customerId, customerName FROM Nutella.customers;", connecSRFN);
                 "SELECT * FROM Nutella.operations;", connecSRFN);
-            connecSRFN.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            DataTable dataTableSRFN = new DataTable();
+            SqlCommand commandAdd = new SqlCommand(
+                "SELECT sum(CAST (replace(amount, ',', '.') AS NUMERIC(10,2))) " +
+                "FROM Nutella.Operations;", connecSRFN);
 
-            //dataTableSRFN.Columns.Add("customerId", typeof(int));
-            //dataTableSRFN.Rows.Add(1, "", "");
-
-            dataTableSRFN.Load(reader);
-            dataGridView1.DataSource = dataTableSRFN;
-
-
-            //HasRows(connecSRFN);
-        }
-
-        static void HasRows(SqlConnection connection)
-        {
-            using (connection)
+            try
             {
-                SqlCommand command = new SqlCommand(
-                  "SELECT customerId, customerName FROM Nutella.customers;",
-                  connection);
-                connection.Open();
-
+                connecSRFN.Open();
                 SqlDataReader reader = command.ExecuteReader();
+                DataTable dataTableSRFN = new DataTable();
 
-                if (reader.HasRows)
+                dataTableSRFN.Load(reader);
+                dataGridView1.DataSource = dataTableSRFN;
+
+                SqlDataReader readerOftheSUM = commandAdd.ExecuteReader();
+                while (readerOftheSUM.Read())
                 {
-                    while (reader.Read())
-                    {
-                      MessageBox.Show(String.Format("{0}\t{1}", reader[0].ToString(), reader[1].ToString()));
-                    }
+                    string myString = readerOftheSUM[0].ToString();
+                    //MessageBox.Show("la consulta de SUMA a la basedeDatos da: " + myString);
+                    TBsumatory.Text = myString;
                 }
-                else
-                {
-                    MessageBox.Show("No rows found.");
-                }
-                reader.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connecSRFN.State == ConnectionState.Open)
+                {
+                    connecSRFN.Close();
+                }
+            }
+
         }
 
-        private void BtnTRY_Click(object sender, EventArgs e)
-        {
-            string connetionString = null;
-            SqlConnection connecSRFN;
-            connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
-                                "packet size=4096;" +
-                                "user id=serafin;" +
-                                "pwd=19771977;" +
-                                "data source=DatabaseSRFN.mssql.somee.com;" +
-                                "persist security info=False;" +
-                                "initial catalog=DatabaseSRFN";
-
-            connecSRFN = new SqlConnection(connetionString);
-            HasRows(connecSRFN);
-        }
     }
 }

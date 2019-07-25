@@ -50,5 +50,10 @@ namespace SRFNprojectJULY2019proj
                 }
             }
         }
+
+        private void BTNok_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

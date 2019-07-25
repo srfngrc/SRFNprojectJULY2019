@@ -13,127 +13,105 @@ namespace SRFNprojectJULY2019proj
 {
     public partial class loginScreen : Form
     {
-        string TheUserISadmin = "FALSE";
         myInfo infoFromLogScr = new myInfo();
-        
 
         public loginScreen()
         {
+            infoFromLogScr.IsAnAdminTheUser = false;
             InitializeComponent();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void ButtonCancel_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void btnLogIn_Click(object sender, EventArgs e)
         {
-            string connetionString = null;
-            SqlConnection connecSRFN2;
-            connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
-                                "packet size=4096;" +
-                                "user id=serafin;" +
-                                "pwd=19771977;" +
-                                "data source=DatabaseSRFN.mssql.somee.com;" +
-                                "persist security info=False;" +
-                                "initial catalog=DatabaseSRFN";
+            string connetionString = "Server=DatabaseSRFN.mssql.somee.com;" +
+                "Database=DatabaseSRFN;" +
+                "User Id=serafin;" +
+                "Password = 19771977; ";
 
-            connecSRFN2 = new SqlConnection(connetionString);
-            bool ValidLogin = CheckIfLoginIsValid(connecSRFN2);
+            SqlConnection connecSRFN2 = new SqlConnection(connetionString);
 
-            //IN CASE LOGIN AND PASSWORD ARE OK:
-            if (ValidLogin)
+            //First, I check if both fields are NOT empty
+            if ((TBusername.Text == String.Empty) || (TBpassword.Text == String.Empty))
             {
-                //FIRST I CHECK IF THE USER IS ADMINISTRATOR OR NOT 
-                //TO PASS IT TO THE NEXT WINDOW FORM: MAINSCREEN
-                if (CheckIfUserIsAdmin(connecSRFN2))
-                {
-                    infoFromLogScr.IsAnAdminTheUser = true;
-                }
-                else
-                {
-                    infoFromLogScr.IsAnAdminTheUser = false;
-                }
-                MainScreenForm mainWindow = new MainScreenForm(infoFromLogScr);
-                mainWindow.Show();
+                MessageBox.Show("Please enter both Username and Password. Both of them are mandatory");
+                return;
             }
             else
+            //If both fields are filled, I check if are both values in the same row of the Table logins at the DB
+            //I implement that with the function CheckIfLoginIsValid
             {
-                MessageBox.Show("Sorry, the user and password indicated are not valid");
-            }
-
-        }
-
-        
-
-        bool CheckIfUserIsAdmin(SqlConnection connection3)
-        {
-            using (connection3)
-            {
-                SqlCommand command3 = new SqlCommand(
-                        "SELECT isAdmin FROM Nutella.logins WHERE userName ='" +
-                        textBox1.Text +
-                        "';", connection3);
-                connection3.Open();
-
-                SqlDataReader readerofISADMINfield = command3.ExecuteReader();
-                if (readerofISADMINfield.HasRows)
+                bool ValidLogin = CheckIfLoginIsValid(connecSRFN2);
+                if (ValidLogin)
                 {
-                    while (readerofISADMINfield.Read())
-                    {
-                        TheUserISadmin = readerofISADMINfield[0].ToString();
-                        if (TheUserISadmin == "TRUE")
-                        {
-                            return true;
-                        }
-                    }
-                    return false;
+                    MainScreenForm mainWindow = new MainScreenForm(infoFromLogScr);
+                    mainWindow.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("No rows found in logins Table.");
-                    return false;
+                    MessageBox.Show("Sorry, the user and password indicated are not valid");
+                    TBusername.Text = String.Empty;
+                    TBpassword.Text = String.Empty;
                 }
             }
-
+           
         }
-
-        //The method CheckIfLoginIsValid connects to the DataBase through the connection 
-        //indicated and checks if the combination of user and password inserted through 
-        //the winform correspond to any combination of 2 values at table logins
 
         bool CheckIfLoginIsValid(SqlConnection connection2)
         {
             using (connection2)
             {
                 SqlCommand commandLog = new SqlCommand(
-                  "SELECT userName, passWord FROM Nutella.logins;",
+                  "SELECT userName, passWord, isAdmin FROM Nutella.logins;",
                   connection2);
-                connection2.Open();
 
-                SqlDataReader loginsReader = commandLog.ExecuteReader();
-
-                if (loginsReader.HasRows)
+                try
                 {
-                    while (loginsReader.Read())
+                    connection2.Open();
+                    SqlDataReader loginsReader = commandLog.ExecuteReader();
+
+                    if (loginsReader.HasRows)
                     {
-                        //MessageBox.Show(String.Format("{0}\t{1}", loginsReader[0].ToString(), loginsReader[1].ToString()));
-                        if ((textBox1.Text == loginsReader[0].ToString()) && (textBox2.Text == loginsReader[1].ToString()))
+                        while (loginsReader.Read())
                         {
-                            loginsReader.Close();
-                            return true;
+                            if ((TBusername.Text == loginsReader[0].ToString()) && (TBpassword.Text == loginsReader[1].ToString()))
+                            {
+                                if (loginsReader[2].ToString().ToLower() == "true")
+                                {
+                                    infoFromLogScr.IsAnAdminTheUser = true;
+                                }
+                                loginsReader.Close();
+                                return true;
+                            }
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("No rows found.");
+                    }
+                    loginsReader.Close();
+                    return false;
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No rows found.");
+                    MessageBox.Show("Sorry, It is not possible to open the connection ! " + ex.Message);
+                    return false;
                 }
-                loginsReader.Close();
-                return false;
+                finally
+                {
+                    if (connection2.State == ConnectionState.Open)
+                    {
+                        connection2.Close();
+                    }
+                }
             }
            
         }
+
     }
 }

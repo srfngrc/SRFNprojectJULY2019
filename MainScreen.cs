@@ -23,13 +23,13 @@ namespace SRFNprojectJULY2019proj
             InitializeComponent();
             if (infoFromLoginScreen.IsAnAdminTheUser == true)
             {
-                MessageBox.Show("I DID enter the MainScreen Form as ADMIN");
-                SetValueOfPB4(true);
+                //MessageBox.Show("I DID enter the MainScreen Form as ADMIN");
+                SetValueOfPB5(true);
             }
             else
             {
-                MessageBox.Show("I entered the MainScreen Form as NORMAL USER");
-                SetValueOfPB4(false);
+                //MessageBox.Show("I entered the MainScreen Form as NORMAL USER");
+                SetValueOfPB5(false);
             }
         }
 
@@ -38,9 +38,10 @@ namespace SRFNprojectJULY2019proj
             InitializeComponent();
         }
 
-        private void SetValueOfPB4(bool AdminOrNot)
+        private void SetValueOfPB5(bool AdminOrNot)
         {
-            this.pictureBox4.Visible = AdminOrNot;
+            this.PBManageAppUsers.Visible = AdminOrNot;
+            this.label4operation.Visible = AdminOrNot;
         }
         private void MFCancelbtn_Click(object sender, EventArgs e)
         {
@@ -62,25 +63,10 @@ namespace SRFNprojectJULY2019proj
             string tax_sql = null;
             //MessageBox.Show("the values received from the windows form are: " + textBox1ISIN.Text + "......" + textBox1.Text);
         
-            connetionString = "workstation id=DatabaseSRFN.mssql.somee.com;" +
-                                "packet size=4096;" +
-                                "user id=serafin;" +
-                                "pwd=19771977;" +
-                                "data source=DatabaseSRFN.mssql.somee.com;" +
-                                "persist security info=False;" +
-                                "initial catalog=DatabaseSRFN";
-            //tax_sql = "select * from Nutella.customers";
-            //REFERENCIA: tax_sql = "insert into Nutella.customers (customerId,customerName) values (3,'customer name 3')";
-            
-            //tax_sql = "insert into Nutella.customers(customerId, customerName, addressLine1) " +
-            //"values(" +
-            //        textBox1ISIN.Text +
-            //        ", '" +
-            //        textBox1.Text +
-            //        "', '" +
-            //        textBox2.Text +
-            //        "')";
-      
+            connetionString = "Server=DatabaseSRFN.mssql.somee.com;" +
+                "Database=DatabaseSRFN;" +
+                "User Id=serafin;" +
+                "Password = 19771977; ";
 
             connecSRFN = new SqlConnection(connetionString);
 
@@ -118,11 +104,6 @@ namespace SRFNprojectJULY2019proj
             insertForm.Show();
         }
 
-        private void MFokbtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PictureBox2_Click(object sender, EventArgs e)
         {
             //Application.Exit();
@@ -131,22 +112,25 @@ namespace SRFNprojectJULY2019proj
 
         private void PictureBox3_Click(object sender, EventArgs e)
         {
-            All_ODE_Screen a = new All_ODE_Screen();
-            a.Show();
+            All_ODE_Screen ListAllEnteredOperations = new All_ODE_Screen();
+            ListAllEnteredOperations.Show();
         }
 
         private void PictureBox4_Click(object sender, EventArgs e)
         {
-            Edit_Operations b = new Edit_Operations();
-            b.Show();
-            this.Hide();
+            Edit_Operations ModifyPastOperations = new Edit_Operations();
+            ModifyPastOperations.Show();
         }
 
         private void PictureBox5_Click(object sender, EventArgs e)
         {
-            ManageAppUsers c = new ManageAppUsers();
-            this.Hide();
-            c.Show();
+            ManageAppUsers ManageAppUsers = new ManageAppUsers();
+            ManageAppUsers.Show();
+        }
+
+        private void PBAcceptMS_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -21,6 +21,7 @@ namespace SRFNprojectJULY2019proj
         private void Button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            //MainScreenForm.
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -87,13 +88,11 @@ namespace SRFNprojectJULY2019proj
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            //Button2initialpoint:
             string connetionString3 = null;
             SqlConnection connecSRFN3;
             SqlCommand command3;
             string tax_sql = null;
-            //MessageBox.Show("the values received from the windows form are: " + textISINnumber.Text + "......" + textAmount.Text + "......" + textDescripODE.Text);
-            MessageBox.Show("the values received from the windows form are: " + textISINnumber.Text + "......" + textAmount.Text + "......" + textDescripODE.Text + ";;;;;;;;" + dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+            //MessageBox.Show("the values received from the windows form are: " + textISINnumber.Text + "......" + textAmount.Text + "......" + textDescripODE.Text + ";;;;;;;;" + dateTimePicker1.Value.ToString("yyyy-MM-dd"));
 
             connetionString3 = "workstation id=DatabaseSRFN.mssql.somee.com;" +
                                 "packet size=4096;" +
@@ -102,8 +101,6 @@ namespace SRFNprojectJULY2019proj
                                 "data source=DatabaseSRFN.mssql.somee.com;" +
                                 "persist security info=False;" +
                                 "initial catalog=DatabaseSRFN";
-            //tax_sql = "select * from Nutella.customers";
-            //tax_sql = "insert into Nutella.customers (customerId,customerName) values (3,'customer name 3')";
             tax_sql = "insert into Nutella.operations(isin, purchaseDate, sellDate, amount, description) " +
                     "values('" +
                     textISINnumber.Text +
@@ -125,25 +122,23 @@ namespace SRFNprojectJULY2019proj
                 if ((textISINnumber.Text.Length != 0) && (textAmount.Text.Length != 0))
                 {
                     connecSRFN3.Open();
-                    MessageBox.Show("Connection Open ! ");
                     command3 = new SqlCommand(tax_sql, connecSRFN3);
                     int numRowsAffected = command3.ExecuteNonQuery();
-                    MessageBox.Show("Number of rows affected: " + numRowsAffected);
-                    command3.Dispose();
+                    //MessageBox.Show("Number of rows affected: " + numRowsAffected);
+                    MessageBox.Show(" New Operation inserted correctly ");
+                    //command3.Dispose();
                     connecSRFN3.Close();
-                    MessageBox.Show("if no exception thrown so far... Connection Closed !! ");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Please insert at least an IN Number and an Amount. Both are mandatory fields");
-                    //goto Button2initialpoint;
+                    MessageBox.Show("Please insert at least an ISIN Number and an Amount. Both are mandatory fields");
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can not open connection ! " + ex.Message);
+                MessageBox.Show("Cannot open connection ! The reason is: " + ex.Message);
             }
         }
 

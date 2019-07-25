@@ -37,18 +37,18 @@
             this.DTPsellDate = new System.Windows.Forms.DateTimePicker();
             this.TBdescription = new System.Windows.Forms.TextBox();
             this.TBoperationId = new System.Windows.Forms.TextBox();
-            this.operationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.operationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView87)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBdelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBupdate)).BeginInit();
@@ -70,7 +70,7 @@
             this.dataGridView87.Name = "dataGridView87";
             this.dataGridView87.ReadOnly = true;
             this.dataGridView87.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView87.Size = new System.Drawing.Size(599, 363);
+            this.dataGridView87.Size = new System.Drawing.Size(634, 363);
             this.dataGridView87.TabIndex = 0;
             this.dataGridView87.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView87_CellContentClick);
             this.dataGridView87.SelectionChanged += new System.EventHandler(this.SelectionChanget);
@@ -78,7 +78,7 @@
             // PBdelete
             // 
             this.PBdelete.Image = global::SRFNprojectJULY2019proj.Properties.Resources.DELETE_button;
-            this.PBdelete.Location = new System.Drawing.Point(484, 415);
+            this.PBdelete.Location = new System.Drawing.Point(519, 415);
             this.PBdelete.Name = "PBdelete";
             this.PBdelete.Size = new System.Drawing.Size(127, 93);
             this.PBdelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +89,7 @@
             // PBupdate
             // 
             this.PBupdate.Image = global::SRFNprojectJULY2019proj.Properties.Resources.UPDATE_button;
-            this.PBupdate.Location = new System.Drawing.Point(346, 415);
+            this.PBupdate.Location = new System.Drawing.Point(352, 415);
             this.PBupdate.Name = "PBupdate";
             this.PBupdate.Size = new System.Drawing.Size(132, 93);
             this.PBupdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,50 +139,6 @@
             this.TBoperationId.ReadOnly = true;
             this.TBoperationId.Size = new System.Drawing.Size(100, 20);
             this.TBoperationId.TabIndex = 9;
-            // 
-            // operationId
-            // 
-            this.operationId.DataPropertyName = "operationId";
-            this.operationId.HeaderText = "ID";
-            this.operationId.Name = "operationId";
-            this.operationId.ReadOnly = true;
-            this.operationId.Width = 50;
-            // 
-            // isin
-            // 
-            this.isin.DataPropertyName = "isin";
-            this.isin.HeaderText = "ISI number";
-            this.isin.Name = "isin";
-            this.isin.ReadOnly = true;
-            // 
-            // purchaseDate
-            // 
-            this.purchaseDate.DataPropertyName = "purchaseDate";
-            this.purchaseDate.HeaderText = "Purchase Date";
-            this.purchaseDate.Name = "purchaseDate";
-            this.purchaseDate.ReadOnly = true;
-            this.purchaseDate.Width = 105;
-            // 
-            // sellDate
-            // 
-            this.sellDate.DataPropertyName = "sellDate";
-            this.sellDate.HeaderText = "Sale Date";
-            this.sellDate.Name = "sellDate";
-            this.sellDate.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.DataPropertyName = "amount";
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
             // 
             // label1
             // 
@@ -238,11 +194,56 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Operation Id:";
             // 
+            // operationId
+            // 
+            this.operationId.DataPropertyName = "operationId";
+            this.operationId.HeaderText = "ID";
+            this.operationId.Name = "operationId";
+            this.operationId.ReadOnly = true;
+            this.operationId.Width = 50;
+            // 
+            // isin
+            // 
+            this.isin.DataPropertyName = "isin";
+            this.isin.HeaderText = "ISI number";
+            this.isin.Name = "isin";
+            this.isin.ReadOnly = true;
+            // 
+            // purchaseDate
+            // 
+            this.purchaseDate.DataPropertyName = "purchaseDate";
+            this.purchaseDate.HeaderText = "Purchase Date";
+            this.purchaseDate.Name = "purchaseDate";
+            this.purchaseDate.ReadOnly = true;
+            this.purchaseDate.Width = 105;
+            // 
+            // sellDate
+            // 
+            this.sellDate.DataPropertyName = "sellDate";
+            this.sellDate.HeaderText = "Sale Date";
+            this.sellDate.Name = "sellDate";
+            this.sellDate.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.DataPropertyName = "amount";
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
             // Edit_Operations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 549);
+            this.ClientSize = new System.Drawing.Size(658, 551);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -259,6 +260,7 @@
             this.Controls.Add(this.PBupdate);
             this.Controls.Add(this.dataGridView87);
             this.Name = "Edit_Operations";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit_Operations";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView87)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBdelete)).EndInit();
@@ -279,17 +281,17 @@
         private System.Windows.Forms.DateTimePicker DTPsellDate;
         private System.Windows.Forms.TextBox TBdescription;
         private System.Windows.Forms.TextBox TBoperationId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn operationId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operationId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
     }
 }
