@@ -34,8 +34,6 @@ namespace SRFNprojectJULY2019proj
                 "Password = 19771977; ";
         SqlConnection connecSRFN = new SqlConnection(connetionString);
 
-        static int idOperationSRFN = -1;
-
         public Edit_Operations()
         {
             InitializeComponent();
@@ -44,24 +42,36 @@ namespace SRFNprojectJULY2019proj
 
         public void DisplayData()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Nutella.operations;", connecSRFN);
-            //DisplayData();
-            connecSRFN.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            DataTable dataTableSRFN = new DataTable();
-            dataTableSRFN.Load(reader);
-            dataGridView87.DataSource = dataTableSRFN;
-            connecSRFN.Close();
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM Nutella.operations;", connecSRFN);
+                connecSRFN.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                DataTable dataTableSRFN = new DataTable();
+                dataTableSRFN.Load(reader);
+                dataGridView87.DataSource = dataTableSRFN;
+            }
+            catch (Exception ex3)
+            {
+                MessageBox.Show(ex3.Message);
+            }
+            finally
+            {
+                if (connecSRFN.State == ConnectionState.Open)
+                {
+                    connecSRFN.Close();
+                }
+            }
         }
 
-        private void dataGridView87_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            //textBox1.Text = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
-            idOperationSRFN = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
-            TBisin.Text = dataGridView87.Rows[e.RowIndex].Cells[1].Value.ToString();
-            TBamount.Text = dataGridView87.Rows[e.RowIndex].Cells[2].Value.ToString();
-            TBdescription.Text = dataGridView87.Rows[e.RowIndex].Cells[3].Value.ToString();
-        }
+        //private void dataGridView87_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        //{
+        //    //textBox1.Text = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
+        //    idOperationSRFN = Convert.ToInt32(dataGridView87.Rows[e.RowIndex].Cells[0].Value.ToString());
+        //    TBisin.Text = dataGridView87.Rows[e.RowIndex].Cells[1].Value.ToString();
+        //    TBamount.Text = dataGridView87.Rows[e.RowIndex].Cells[2].Value.ToString();
+        //    TBdescription.Text = dataGridView87.Rows[e.RowIndex].Cells[3].Value.ToString();
+        //}
 
         //Clear Data  
         private void ClearData()
@@ -127,7 +137,6 @@ namespace SRFNprojectJULY2019proj
         //DELETE RECORDDD
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            //if (ID != 0)
             if (TBoperationId.Text != string.Empty)
             {
                 SqlCommand cmd;
@@ -137,8 +146,6 @@ namespace SRFNprojectJULY2019proj
                 cmd = new SqlCommand(query123, connecSRFN);
                 connecSRFN.Close();
                 connecSRFN.Open();
-                //cmd.Parameters.AddWithValue("@id", ID);
-                //cmd.Parameters.AddWithValue("@operationId", idOperationSRFN); //ID esta bien ahi?no, harcodeo el 4
                 cmd.ExecuteNonQuery();
                 //ExecuteNonQuery is used for inserts,updates and deletes. Not for selects.
                 if (connecSRFN.State == ConnectionState.Open)

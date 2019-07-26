@@ -36,7 +36,7 @@ namespace SRFNprojectJULY2019proj
                 SqlDataReader WhatsRead = mycommand.ExecuteReader();
                 DataTable tabla = new DataTable();
                 tabla.Load(WhatsRead);
-                dataGridView1.DataSource = tabla;
+                DataGridViewLOGINS.DataSource = tabla;
             }
             catch( Exception ex2)
             {
@@ -51,9 +51,50 @@ namespace SRFNprojectJULY2019proj
             }
         }
 
+
+        private void ClearDataLOGINS()
+        {
+            TBloginId.Text = "";
+            textBox2.Text = "";
+            textBox3.ResetText();
+            textBox4.ResetText();
+            textBox5.Text = "";
+        }
+
         private void BTNok_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SelectionChangetLOGINS(object sender, EventArgs e)
+        {
+            if (DataGridViewLOGINS.SelectedRows.Count > 0)
+            {
+                MessageBox.Show("AAAAAAAAAAAAAAAAAAAAAAAA" + DataGridViewLOGINS.SelectedRows[0].Cells[0].Value);
+                TBloginId.Text = DataGridViewLOGINS.SelectedRows[0].Cells[0].Value + string.Empty;
+                textBox2.Text = DataGridViewLOGINS.SelectedRows[0].Cells[1].Value + string.Empty;
+                textBox3.Text = DataGridViewLOGINS.SelectedRows[0].Cells[2].Value.ToString() + string.Empty;
+                textBox4.Text = DataGridViewLOGINS.SelectedRows[0].Cells[3].Value.ToString() + string.Empty;
+                textBox5.Text = DataGridViewLOGINS.SelectedRows[0].Cells[4].Value.ToString() + string.Empty;
+                //TBdescription.Text = DataGridViewLOGINS.SelectedRows[0].Cells[5].Value.ToString() + String.Empty;
+            }
+        }
+
+        private void DataGridViewLOGINS_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        //UPDATE A LOGIN
+        private void PBupdateLogins_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //DELETE A LOGIN
+        private void PBdeleteLogins_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
