@@ -17,6 +17,7 @@ namespace SRFNprojectJULY2019proj
         //SqlCommand cmd;
         //SqlDataAdapter adapt;
 
+
         //string connetionString = null;
         //static SqlConnection connecSRFN;
         //IT CANNOT BE DONE IN 2 STEPS THE DECLARATION IN THE MAIN CLASS

@@ -70,7 +70,7 @@ namespace SRFNprojectJULY2019proj
         {
             if (DataGridViewLOGINS.SelectedRows.Count > 0)
             {
-                MessageBox.Show("AAAAAAAAAAAAAAAAAAAAAAAA" + DataGridViewLOGINS.SelectedRows[0].Cells[0].Value);
+                //MessageBox.Show("AAAAAAAAAAAAAAAAAAAAAAAA" + DataGridViewLOGINS.SelectedRows[0].Cells[0].Value);
                 TBloginId.Text = DataGridViewLOGINS.SelectedRows[0].Cells[0].Value + string.Empty;
                 textBox2.Text = DataGridViewLOGINS.SelectedRows[0].Cells[1].Value + string.Empty;
                 textBox3.Text = DataGridViewLOGINS.SelectedRows[0].Cells[2].Value.ToString() + string.Empty;
